@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taste Kitchen — Fresh Food, Bold Flavors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { colors: { brand: '#E85D2A', 'brand-dark': '#C94A1C', warm: '#FFF8F0' } } }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+    .font-heading { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-body text-gray-700 bg-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur z-50 border-b border-orange-100">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+      <span class="font-heading text-2xl font-bold text-brand">Taste Kitchen</span>
+      <div class="hidden md:flex gap-6 text-sm items-center">
+        <a href="#menu" class="hover:text-brand transition">Menu</a>
+        <a href="#about" class="hover:text-brand transition">About</a>
+        <a href="#reviews" class="hover:text-brand transition">Reviews</a>
+        <a href="#reserve" class="bg-brand text-white px-5 py-2 rounded-full hover:bg-brand-dark transition font-medium">Reserve Table</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-warm via-white to-orange-50">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-brand font-medium text-sm mb-3 tracking-wider uppercase">Authentic & Flavorful</p>
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          Fresh Food,<br/><span class="text-brand">Bold Flavors</span>
+        </h1>
+        <p class="mt-5 text-lg text-gray-600 max-w-md leading-relaxed">
+          From farm-fresh ingredients to your plate. Experience dishes crafted with passion and served with love.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a href="#reserve" class="bg-brand text-white px-8 py-3.5 rounded-full hover:bg-brand-dark transition font-semibold shadow-lg shadow-orange-200">
+            Reserve a Table
+          </a>
+          <a href="#menu" class="border-2 border-brand text-brand px-8 py-3.5 rounded-full hover:bg-brand hover:text-white transition font-semibold">
+            View Menu
+          </a>
+        </div>
+        <div class="mt-8 flex gap-8 text-sm text-gray-500">
+          <div><span class="text-2xl font-bold text-gray-900 block">4.8★</span>500+ Reviews</div>
+          <div><span class="text-2xl font-bold text-gray-900 block">30min</span>Avg Delivery</div>
+          <div><span class="text-2xl font-bold text-gray-900 block">100%</span>Fresh Daily</div>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="/images/restaurant.jpg" alt="The Duckling — Fine Dining" class="w-full rounded-2xl shadow-2xl" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Our Menu</h2>
+      <p class="text-center text-gray-500 mb-12 max-w-lg mx-auto">Handcrafted dishes made with the freshest ingredients</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Starters -->
+        <div>
+          <h3 class="font-heading text-xl font-bold text-brand mb-5 border-b border-orange-200 pb-2">Starters</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <div><p class="font-semibold text-gray-900">Bruschetta Trio</p><p class="text-sm text-gray-500">Tomato basil, mushroom, olive tapenade</p></div>
+              <span class="text-brand font-bold">$12</span>
+            </div>
+            <div class="flex justify-between items-start">
+              <div><p class="font-semibold text-gray-900">Crispy Calamari</p><p class="text-sm text-gray-500">Lemon aioli, mixed greens</p></div>
+              <span class="text-brand font-bold">$14</span>
+            </div>
+            <div class="flex justify-between items-start">
+              <div><p class="font-semibold text-gray-900">Soup of the Day</p><p class="text-sm text-gray-500">Freshly prepared daily</p></div>
+              <span class="text-brand font-bold">$9</span>
+            </div>
+          </div>
+        </div>
+        <!-- Mains -->
+        <div>
+          <h3 class="font-heading text-xl font-bold text-brand mb-5 border-b border-orange-200 pb-2">Main Course</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <div><p class="font-semibold text-gray-900">Grilled Salmon</p><p class="text-sm text-gray-500">Herb butter, seasonal vegetables, rice</p></div>
+              <span class="text-brand font-bold">$24</span>
+            </div>
+            <div class="flex justify-between items-start">
+              <div><p class="font-semibold text-gray-900">Butter Chicken</p><p class="text-sm text-gray-500">Creamy tomato sauce, naan, basmati rice</p></div>
+              <span class="text-brand font-bold">$18</span>
+            </div>
+            <div class="flex justify-between items-start">
+              <div><p class="font-semibold text-gray-900">Truffle Pasta</p><p class="text-sm text-gray-500">Wild mushrooms, parmesan, fresh truffle oil</p></div>
+              <span class="text-brand font-bold">$22</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-warm">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div class="bg-gradient-to-br from-orange-300 to-red-400 rounded-2xl aspect-video flex items-center justify-center">
+        <div class="text-center text-white">
+          <svg class="w-16 h-16 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.999A8.966 8.966 0 0112 21a8.966 8.966 0 01-9-5.001M12 3c4.97 0 9 4.03 9 9a8.96 8.96 0 01-1.969 5.617M12 3c-4.97 0-9 4.03-9 9a8.96 8.96 0 001.969 5.617"/></svg>
+          <p class="font-heading text-2xl font-bold">Our Kitchen</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="font-heading text-3xl font-bold text-gray-900 mb-4">A Passion for <span class="text-brand">Great Food</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Founded in 2018, Taste Kitchen brings together the finest locally-sourced ingredients with culinary techniques from around the world.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Every dish is prepared fresh to order by our team of experienced chefs who believe food is an art form.
+        </p>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="bg-white p-4 rounded-xl"><span class="text-2xl font-bold text-brand block">50+</span><span class="text-xs text-gray-500">Dishes</span></div>
+          <div class="bg-white p-4 rounded-xl"><span class="text-2xl font-bold text-brand block">12</span><span class="text-xs text-gray-500">Chefs</span></div>
+          <div class="bg-white p-4 rounded-xl"><span class="text-2xl font-bold text-brand block">6yr</span><span class="text-xs text-gray-500">In Business</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-heading text-3xl font-bold text-center text-gray-900 mb-10">What Our Guests Say</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-warm rounded-2xl p-6">
+          <div class="text-amber-400 mb-3">★★★★★</div>
+          <p class="text-gray-700 mb-4">"The butter chicken is hands down the best I've had outside of India. Incredible flavors!"</p>
+          <p class="font-semibold text-gray-900">— James T.</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-6">
+          <div class="text-amber-400 mb-3">★★★★★</div>
+          <p class="text-gray-700 mb-4">"Perfect date night spot. The ambiance, food, and service were all top-notch."</p>
+          <p class="font-semibold text-gray-900">— Sophie L.</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-6">
+          <div class="text-amber-400 mb-3">★★★★★</div>
+          <p class="text-gray-700 mb-4">"Fast delivery and the food arrived hot and fresh. The truffle pasta is a must-try!"</p>
+          <p class="font-semibold text-gray-900">— Raj P.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation -->
+  <section id="reserve" class="py-16 bg-gradient-to-r from-brand to-brand-dark">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Reserve Your Table</h2>
+      <p class="text-orange-100 text-lg mb-8">Book ahead and enjoy a seamless dining experience.</p>
+      <form class="bg-white rounded-2xl p-6 text-left space-y-4 shadow-2xl">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand/50 focus:border-brand outline-none"/>
+          <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand/50 focus:border-brand outline-none"/>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input type="date" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand/50 focus:border-brand outline-none"/>
+          <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand/50 focus:border-brand outline-none text-gray-500">
+            <option>Number of Guests</option>
+            <option>1-2 Guests</option>
+            <option>3-4 Guests</option>
+            <option>5-6 Guests</option>
+            <option>7+ Guests</option>
+          </select>
+        </div>
+        <button type="button" class="w-full bg-brand text-white py-3.5 rounded-lg font-semibold hover:bg-brand-dark transition text-lg">
+          Reserve Now
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="font-heading text-xl text-white mb-2">Taste Kitchen</p>
+      <p class="text-sm">456 Flavor Lane, Mumbai, India · Open Tue–Sun 11am–10pm</p>
+      <p class="text-xs mt-4">Demo built by <a href="/" class="hover:underline inline-flex items-center gap-1.5"><img src="/images/icon-32.png" alt="" class="w-4 h-4 inline rounded"/>AntyAI</a> — Intelligent Solutions</p>
+    </div>
+  </footer>
+
+</body>
+</html>
