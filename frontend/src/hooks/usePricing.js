@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
  * Country-based pricing tiers (base prices in USD).
  * Regions grouped by purchasing power.
  */
-const REGION_TIERS = {
+export const REGION_TIERS = {
   tier1: [
     'US', 'CA', 'GB', 'AU', 'NZ', 'DE', 'FR', 'NL', 'SE', 'NO', 'DK', 'FI',
     'CH', 'AT', 'BE', 'IE', 'LU', 'SG', 'JP', 'KR', 'IL', 'IT', 'ES'
@@ -18,7 +18,7 @@ const REGION_TIERS = {
 }
 
 // Base prices in USD per tier
-const BASE_USD = {
+export const BASE_USD = {
   tier1: {
     plans: { starter: 149, growth: 299, pro: 499 },
     services: { businessWebsite: 149, ecommerce: 299, landingPage: 99, redesign: 129, maintenance: 29 }
@@ -34,7 +34,7 @@ const BASE_USD = {
 }
 
 // Country code → currency code mapping (covers major countries)
-const COUNTRY_CURRENCY = {
+export const COUNTRY_CURRENCY = {
   US: 'USD', CA: 'CAD', GB: 'GBP', AU: 'AUD', NZ: 'NZD',
   DE: 'EUR', FR: 'EUR', NL: 'EUR', AT: 'EUR', BE: 'EUR', IE: 'EUR',
   LU: 'EUR', FI: 'EUR', IT: 'EUR', ES: 'EUR', PT: 'EUR', GR: 'EUR',
@@ -51,7 +51,7 @@ const COUNTRY_CURRENCY = {
 }
 
 // Currency display config
-const CURRENCY_CONFIG = {
+export const CURRENCY_CONFIG = {
   USD: { symbol: '$',   decimals: 0 },
   CAD: { symbol: 'C$',  decimals: 0 },
   GBP: { symbol: '£',   decimals: 0 },
@@ -104,7 +104,7 @@ const CURRENCY_CONFIG = {
   GHS: { symbol: 'GH₵', decimals: 0 },
 }
 
-function getTier(countryCode) {
+export function getTier(countryCode) {
   const code = (countryCode || '').toUpperCase()
   if (REGION_TIERS.tier1.includes(code)) return 'tier1'
   if (REGION_TIERS.tier2.includes(code)) return 'tier2'
