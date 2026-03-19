@@ -38,7 +38,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>hello@antyai.com</li>
+              <li>me@antyai.com</li>
               <li>Available globally</li>
               <li>Response within 12 hours</li>
             </ul>

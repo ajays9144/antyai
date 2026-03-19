@@ -13,7 +13,7 @@
  */
 
 const SHEET_NAME = 'Leads';
-const ADMIN_EMAIL = 'hello@antyai.com';  // Change this to your email
+const ADMIN_EMAIL = 'me@antyai.com';  // Change this to your email
 
 function doPost(e) {
   try {
@@ -87,7 +87,7 @@ function sendAutoReply(email, name) {
           <p style="color: #9ca3af; font-size: 14px;">
             Best regards,<br/>
             The AntyAI Team<br/>
-            hello@antyai.com
+            me@antyai.com
           </p>
         </div>
       </div>`;
