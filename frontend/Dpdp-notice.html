@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Anty AI — DPDP Act Notice. Disclosures required under the Digital Personal Data Protection Act 2023 for Data Principals located in India." />
+<title>DPDP Notice · Anty AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#F8F4EC; --cream-2:#F2ECDD; --paper:#FDFAF3; --paper-pure:#FFFFFF;
+  --ink:#1A1814; --ink-2:#2D2A23; --mute:#6B6457; --whisper:#9C9586;
+  --gold:#B8923D; --gold-deep:#8C6F2E; --gold-light:#D4B66E;
+  --gold-soft:#F0E5C8; --gold-tint:rgba(184,146,61,0.08);
+  --burgundy:#7A2E2E; --olive:#5C6B3D;
+  --line:rgba(26,24,20,0.10); --line-soft:rgba(26,24,20,0.05); --line-gold:rgba(184,146,61,0.25);
+  --display:'Fraunces','Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--gold); color: var(--paper-pure); }
+a { color: var(--gold-deep); text-decoration: none; border-bottom: 1px solid var(--line-gold); transition: all 0.2s ease; }
+a:hover { color: var(--ink); border-color: var(--gold); }
+
+nav {
+  position: sticky; top: 0; z-index: 100; padding: 18px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(248,244,236,0.92); backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);
+}
+.brand { font-family: var(--display); font-size: 26px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: var(--ink); border: none; }
+.brand .ai { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--gold-deep); text-transform: uppercase; position: relative; top: -2px; }
+.nav-back { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 18px; border: 1px solid var(--line); color: var(--ink); border-radius: 999px; transition: all 0.3s ease; }
+.nav-back:hover { border-color: var(--gold); color: var(--gold-deep); }
+
+.legal-header { padding: 80px 32px 48px; border-bottom: 1px solid var(--line); background: var(--cream); }
+.legal-header-inner { max-width: 880px; margin: 0 auto; }
+.legal-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 18px; display: inline-flex; gap: 10px; align-items: center; }
+.legal-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.legal-header h1 { font-family: var(--display); font-size: clamp(40px,6vw,64px); line-height: 1.02; letter-spacing: -0.02em; font-variation-settings: "opsz" 144, "SOFT" 50; margin-bottom: 24px; color: var(--ink); }
+.legal-header h1 em { font-style: italic; color: var(--gold-deep); }
+.legal-header p { font-size: 18px; color: var(--ink-2); line-height: 1.6; max-width: 680px; }
+.legal-meta { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); }
+.legal-meta strong { color: var(--ink); font-weight: 500; }
+
+.legal-body { max-width: 880px; margin: 0 auto; padding: 64px 32px 120px; display: grid; grid-template-columns: 220px 1fr; gap: 64px; align-items: start; }
+@media (max-width: 920px) { .legal-body { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 80px; } }
+
+.toc { position: sticky; top: 100px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; }
+.toc-label { text-transform: uppercase; color: var(--gold-deep); letter-spacing: 0.16em; margin-bottom: 18px; font-weight: 500; }
+.toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 8px; }
+.toc ol li { counter-increment: toc; padding-left: 24px; position: relative; }
+.toc ol li::before { content: counter(toc, decimal-leading-zero); position: absolute; left: 0; color: var(--whisper); font-weight: 500; }
+.toc a { color: var(--mute); text-transform: none; border: none; font-family: var(--sans); font-size: 13px; letter-spacing: 0; line-height: 1.5; }
+.toc a:hover { color: var(--gold-deep); }
+@media (max-width: 920px) { .toc { position: relative; top: 0; } }
+
+.legal-content section { padding: 32px 0; border-bottom: 1px solid var(--line-soft); }
+.legal-content section:last-child { border-bottom: none; }
+.legal-content section:first-child { padding-top: 0; }
+.legal-content h2 { font-family: var(--display); font-size: clamp(26px,3vw,32px); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 8px; font-variation-settings: "opsz" 144, "SOFT" 50; }
+.legal-content h2 em { font-style: italic; color: var(--gold-deep); }
+.legal-content .h-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 8px; display: block; font-weight: 500; }
+.legal-content h3 { font-family: var(--display); font-size: 19px; font-weight: 500; letter-spacing: -0.005em; margin: 28px 0 10px; color: var(--ink); font-variation-settings: "opsz" 144, "SOFT" 50; }
+.legal-content p { font-size: 15.5px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+.legal-content p:last-child { margin-bottom: 0; }
+.legal-content ul, .legal-content ol { margin: 14px 0 14px 24px; font-size: 15.5px; color: var(--ink-2); line-height: 1.7; }
+.legal-content li { margin-bottom: 8px; padding-left: 6px; }
+.legal-content ul li::marker { color: var(--gold); }
+.legal-content ol li::marker { color: var(--gold-deep); font-weight: 500; }
+.legal-content strong { color: var(--ink); font-weight: 600; }
+
+.callout { margin: 24px 0; padding: 20px 24px; background: var(--gold-tint); border-left: 3px solid var(--gold); font-size: 14.5px; color: var(--ink-2); line-height: 1.65; }
+.callout strong { color: var(--gold-deep); }
+.warning { background: rgba(122,46,46,0.06); border-left-color: var(--burgundy); }
+.warning strong { color: var(--burgundy); }
+
+.contact-block { margin-top: 24px; padding: 24px; background: var(--paper-pure); border: 1px solid var(--line); font-size: 14.5px; line-height: 1.6; }
+.contact-block strong { color: var(--ink); display: block; margin-bottom: 4px; }
+.contact-block p { margin-bottom: 12px; font-size: 14.5px; }
+.contact-block p:last-child { margin-bottom: 0; }
+.contact-block .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); font-weight: 500; }
+
+footer { background: var(--ink); color: var(--paper); padding: 48px 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: rgba(248,244,236,0.5); }
+footer .wrap { max-width: 880px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+footer a { color: rgba(248,244,236,0.7); border: none; }
+footer a:hover { color: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand"><span>Anty</span><span class="ai">.ai</span></a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<header class="legal-header">
+  <div class="legal-header-inner">
+    <div class="legal-eyebrow">Legal · DPDP Notice</div>
+    <h1>DPDP Act <em>Notice.</em></h1>
+    <p>Disclosures required under §5 of the Digital Personal Data Protection Act 2023, for Data Principals located in India. This notice supplements (and does not replace) our Privacy Policy and Reservation Terms. If there is any conflict, the more protective provision applies.</p>
+    <div class="legal-meta">
+      <span><strong>Effective:</strong> [TO BE FILLED ON LAUNCH]</span>
+      <span><strong>Last updated:</strong> [TO BE FILLED ON LAUNCH]</span>
+      <span><strong>Version:</strong> 1.0 · Pre-launch draft</span>
+    </div>
+  </div>
+</header>
+
+<div class="legal-body">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#what">What this is</a></li>
+      <li><a href="#fiduciary">The Data Fiduciary</a></li>
+      <li><a href="#categories">Categories of data</a></li>
+      <li><a href="#purposes">Purposes of processing</a></li>
+      <li><a href="#consent">Lawful basis &amp; consent</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#withdrawal">Withdrawing consent</a></li>
+      <li><a href="#grievance">Grievance Officer</a></li>
+      <li><a href="#dpb">Complaints to the DPB</a></li>
+      <li><a href="#transfers">Cross-border transfers</a></li>
+      <li><a href="#updates">Updates to this notice</a></li>
+    </ol>
+  </aside>
+
+  <div class="legal-content">
+
+    <section id="what">
+      <span class="h-num">01</span>
+      <h2>What this <em>is.</em></h2>
+      <p>This notice fulfils the requirements of §5 of the Digital Personal Data Protection Act 2023 ("<strong>DPDP Act</strong>") and the rules made thereunder. It tells you, in plain language, what personal data Anty AI processes about you, why, on what lawful basis, and what rights you have as a Data Principal.</p>
+      <div class="callout">
+        <strong>How to read this notice.</strong> &nbsp; Sections 03 (categories of data) and 04 (purposes) are the most important — they tell you exactly what we collect and why. Section 06 (your rights) and Section 08 (Grievance Officer) tell you how to exercise control. The rest is supporting context.
+      </div>
+    </section>
+
+    <section id="fiduciary">
+      <span class="h-num">02</span>
+      <h2>The Data <em>Fiduciary.</em></h2>
+      <p>The Data Fiduciary for the personal data processed in connection with the Anty AI service is:</p>
+      <div class="contact-block">
+        <p><strong>Legal name:</strong> [Insert legal entity — e.g., Anty AI Technologies Private Limited]</p>
+        <p><strong>CIN:</strong> [Insert CIN]</p>
+        <p><strong>Registered office:</strong> [Insert registered address]</p>
+        <p><strong>Email:</strong> <a href="mailto:legal@antyai.com">legal@antyai.com</a></p>
+        <p><strong>Website:</strong> antyai.com</p>
+      </div>
+      <p>Where applicable Indian law designates Anty AI as a "<strong>Significant Data Fiduciary</strong>" (per §10 DPDP Act and any rules made thereunder), additional disclosures, audit obligations and Data Protection Officer responsibilities will apply. We will publish a separate notice if and when that designation takes effect.</p>
+    </section>
+
+    <section id="categories">
+      <span class="h-num">03</span>
+      <h2>Categories of <em>personal data</em> we process.</h2>
+      <p>For Data Principals located in India, the categories are:</p>
+
+      <h3>3.1 Biometric data.</h3>
+      <p>Facial geometry, voice spectrum and other biometric markers derived from samples you provide. These are sensitive personal data classified by the DPDP Act. We process these only with your explicit consent (see §05 below).</p>
+
+      <h3>3.2 Identity data.</h3>
+      <p>Full name, date of birth, government-issued ID copies (Aadhaar, passport, driving licence, PAN — your choice), nationality, photographs, signature.</p>
+
+      <h3>3.3 Contact data.</h3>
+      <p>Email address, telephone number, postal address (where required), preferred language.</p>
+
+      <h3>3.4 Authorized-representative data.</h3>
+      <p>Where a manager, agent, lawyer or family member acts for you, the same identity and contact data for them, plus documentation of their authority.</p>
+
+      <h3>3.5 Commercial data.</h3>
+      <p>Subscription tier, billing details, deposit-escrow reference, payment-instrument metadata (full card numbers are not stored by us).</p>
+
+      <h3>3.6 Service data.</h3>
+      <p>Detection records, takedown filings, platform correspondence, dashboard usage, support requests.</p>
+
+      <h3>3.7 Technical data.</h3>
+      <p>IP address, device identifiers, browser, OS, time zone, cookies and similar technologies.</p>
+    </section>
+
+    <section id="purposes">
+      <span class="h-num">04</span>
+      <h2>Purposes of <em>processing.</em></h2>
+      <p>We process your personal data only for these stated purposes:</p>
+      <ol>
+        <li>To verify your identity and authority to act for the person whose biometric data is being enrolled.</li>
+        <li>To generate and securely store an encrypted biometric template based on your samples.</li>
+        <li>To detect content on the public internet that uses your likeness without authorization, by matching against your template.</li>
+        <li>To classify each detected match by intent (commercial fraud, NCII, deceptive impersonation, fan content, satire, news, etc.) before any action is taken.</li>
+        <li>To file takedown notices with platforms, hosts and intermediaries under DMCA, IT Rules 2021, DPDP Act, EU AI Act, NO FAKES Act, TAKE IT DOWN Act, ELVIS Act and applicable personality-rights case law.</li>
+        <li>To re-monitor continuously and re-file takedowns for re-uploads.</li>
+        <li>To deliver detections, takedowns and outcomes to you through a secure dashboard.</li>
+        <li>To provide an evidence package if you choose to pursue civil or criminal action against an uploader through your own counsel.</li>
+        <li>To process subscription payments and refunds, including the regulated escrow of any pre-launch interest deposit.</li>
+        <li>To comply with our legal, regulatory, tax, audit and accounting obligations.</li>
+        <li>To prevent fraud, abuse and unauthorized use of the service.</li>
+      </ol>
+      <p><strong>We do not process your personal data for:</strong> advertising, marketing of third-party products, AI model training that benefits anyone other than you, sale or licence to data brokers, or any purpose not listed above. Additional purposes require renewed, specific consent.</p>
+    </section>
+
+    <section id="consent">
+      <span class="h-num">05</span>
+      <h2>Lawful basis &amp; <em>consent.</em></h2>
+      <p>Under the DPDP Act, personal data may be processed only on grounds set out in §6 and §7. The grounds Anty AI relies on:</p>
+      <ul>
+        <li><strong>§6 — Consent.</strong> Free, specific, informed, unconditional, unambiguous consent given by you (or your authorized representative). This is the primary basis on which we process biometric data.</li>
+        <li><strong>§7(b) — Performance of a function under law.</strong> Where required to comply with statutory takedown procedures.</li>
+        <li><strong>§7(c) — Compliance with judgment, decree or order.</strong> Where ordered by a court of competent jurisdiction.</li>
+        <li><strong>§7(g) — Employment-related purposes.</strong> Only with respect to our own employees, contractors and agents — never our clients.</li>
+      </ul>
+      <p>Consent is requested in clear, plain language at the point of collection. You can review the consent text at any time by contacting <a href="mailto:privacy@antyai.com">privacy@antyai.com</a>.</p>
+    </section>
+
+    <section id="rights">
+      <span class="h-num">06</span>
+      <h2>Your rights as a <em>Data Principal.</em></h2>
+      <p>Under §11–§14 of the DPDP Act you have:</p>
+      <ol>
+        <li><strong>Right to information about processing</strong> — to obtain a summary of the personal data being processed and the processing activities undertaken.</li>
+        <li><strong>Right to correction, completion, updating and erasure</strong> — to ensure your data is accurate and to demand its deletion when no longer required.</li>
+        <li><strong>Right of grievance redressal</strong> — to have any grievance addressed by our Grievance Officer within prescribed timelines.</li>
+        <li><strong>Right of nomination</strong> — to nominate another individual who, in the event of your death or incapacity, may exercise these rights on your behalf.</li>
+      </ol>
+      <p>To exercise any of these rights, email <a href="mailto:privacy@antyai.com">privacy@antyai.com</a> or our Grievance Officer (see §08). We will acknowledge within 48 hours and respond within 30 days, in line with the DPDP Act and any rules made thereunder.</p>
+    </section>
+
+    <section id="withdrawal">
+      <span class="h-num">07</span>
+      <h2>Withdrawing <em>consent.</em></h2>
+      <p>You may withdraw your consent to processing at any time by emailing <a href="mailto:privacy@antyai.com">privacy@antyai.com</a> or using the in-dashboard withdrawal control.</p>
+      <p><strong>Consequences of withdrawal:</strong></p>
+      <ul>
+        <li>We will stop processing your personal data for the purposes covered by the withdrawn consent within a reasonable period (typically 7 days).</li>
+        <li>If withdrawal makes it impossible to provide the service (e.g., withdrawal of consent to process biometric data), the service will be terminated and remaining subscription fees prorated and refunded.</li>
+        <li>Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</li>
+        <li>Some data may need to be retained to comply with statutory record-keeping obligations (tax, AML, etc.). Such retention is described in our <a href="privacy.html#retention">Privacy Policy §07</a>.</li>
+      </ul>
+    </section>
+
+    <section id="grievance">
+      <span class="h-num">08</span>
+      <h2>Grievance <em>Officer.</em></h2>
+      <p>As required by §8(10) of the DPDP Act and §3(1)(11) of the IT Rules 2021, we appoint a Grievance Officer to receive and resolve your complaints relating to processing of personal data.</p>
+      <div class="contact-block">
+        <span class="label">Grievance Officer · India</span>
+        <p><strong>Name:</strong> [TO BE APPOINTED BEFORE LAUNCH]</p>
+        <p><strong>Designation:</strong> Grievance Officer</p>
+        <p><strong>Email:</strong> <a href="mailto:grievance@antyai.com">grievance@antyai.com</a></p>
+        <p><strong>Postal address:</strong> [Insert registered office address]</p>
+        <p><strong>Telephone:</strong> [Insert direct line]</p>
+        <p><strong>Office hours:</strong> Monday to Friday, 10:00–18:00 IST (excluding public holidays in Maharashtra)</p>
+        <p><strong>Acknowledgement:</strong> within 48 hours of receipt</p>
+        <p><strong>Resolution:</strong> within 30 days of receipt</p>
+      </div>
+      <p>If you are not satisfied with our Grievance Officer's response, you may escalate to the Data Protection Board of India.</p>
+    </section>
+
+    <section id="dpb">
+      <span class="h-num">09</span>
+      <h2>Complaints to the <em>Data Protection Board.</em></h2>
+      <p>You may lodge a complaint with the Data Protection Board of India ("DPB") established under §18 of the DPDP Act, in respect of any breach of the DPDP Act by Anty AI. The DPB has the power to inquire, summon, examine on oath, inspect, and impose financial penalties (up to ₹250 crore) for breaches.</p>
+      <p>You should normally exhaust the grievance-redressal mechanism with our Grievance Officer (§08 above) before approaching the DPB, except in cases of urgent or serious breach.</p>
+      <p>Contact details for the DPB (current at the date of this notice — please verify before filing):</p>
+      <ul>
+        <li>Website: dpb.gov.in (placeholder; check for the operational URL)</li>
+        <li>Postal address: as published by the Government of India when the DPB is operationalised</li>
+      </ul>
+    </section>
+
+    <section id="transfers">
+      <span class="h-num">10</span>
+      <h2>Cross-border <em>data transfers.</em></h2>
+      <p>To deliver a global service, we may transfer your personal data outside India to cloud-hosting regions and sub-processors in other jurisdictions. Each such transfer complies with §16 of the DPDP Act and any restrictions notified by the Central Government.</p>
+      <p>Currently, we may transfer data to:</p>
+      <ul>
+        <li>Cloud-hosting infrastructure in [TO BE SPECIFIED — e.g., AWS Mumbai, AWS Singapore].</li>
+        <li>Sub-processors located in [TO BE SPECIFIED — e.g., United States, European Union, United Kingdom].</li>
+      </ul>
+      <p>The current list of sub-processors and the countries in which they operate is published at antyai.com/sub-processors. We will give you at least 30 days' notice before adding any new sub-processor that processes your biometric data.</p>
+    </section>
+
+    <section id="updates">
+      <span class="h-num">11</span>
+      <h2>Updates to this <em>notice.</em></h2>
+      <p>We may update this notice from time to time. For material changes — those that affect your rights, the categories of data we collect, the purposes of processing, the lawful basis, or the Grievance Officer's contact — we will:</p>
+      <ul>
+        <li>Email you at least 30 days before the change takes effect.</li>
+        <li>Post the change prominently on antyai.com.</li>
+        <li>Where the change requires renewed consent, request your renewed consent. If you do not consent, the new processing will not apply to your data.</li>
+      </ul>
+      <p>The current version of this notice and a complete change log are always posted at antyai.com/dpdp-notice.</p>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ANTY AI · ANTYAI.COM · ALL RIGHTS RESERVED</span>
+    <span>
+      <a href="terms.html">Terms</a>
+      &nbsp;·&nbsp;
+      <a href="privacy.html">Privacy</a>
+      &nbsp;·&nbsp;
+      <a href="dpdp-notice.html">DPDP</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

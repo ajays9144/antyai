@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Anty AI — Privacy Policy. How we handle your biometric and personal data, your rights under DPDP, GDPR and CCPA, and our security commitments." />
+<title>Privacy Policy · Anty AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:      #F8F4EC;
+  --cream-2:    #F2ECDD;
+  --paper:      #FDFAF3;
+  --paper-pure: #FFFFFF;
+  --ink:        #1A1814;
+  --ink-2:      #2D2A23;
+  --mute:       #6B6457;
+  --whisper:    #9C9586;
+  --gold:       #B8923D;
+  --gold-deep:  #8C6F2E;
+  --gold-light: #D4B66E;
+  --gold-soft:  #F0E5C8;
+  --gold-tint:  rgba(184, 146, 61, 0.08);
+  --burgundy:   #7A2E2E;
+  --olive:      #5C6B3D;
+  --line:       rgba(26, 24, 20, 0.10);
+  --line-soft:  rgba(26, 24, 20, 0.05);
+  --line-gold:  rgba(184, 146, 61, 0.25);
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --sans:    'Manrope', system-ui, -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--gold); color: var(--paper-pure); }
+a { color: var(--gold-deep); text-decoration: none; border-bottom: 1px solid var(--line-gold); transition: all 0.2s ease; }
+a:hover { color: var(--ink); border-color: var(--gold); }
+
+/* Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248, 244, 236, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  display: flex; align-items: center; gap: 6px;
+  color: var(--ink);
+  border: none;
+}
+.brand .ai {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  position: relative;
+  top: -2px;
+}
+.nav-back {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.nav-back:hover { border-color: var(--gold); color: var(--gold-deep); }
+
+/* Page header */
+.legal-header {
+  padding: 80px 32px 48px;
+  border-bottom: 1px solid var(--line);
+  background: var(--cream);
+}
+.legal-header-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.legal-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 18px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+.legal-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.legal-header h1 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+.legal-header h1 em { font-style: italic; color: var(--gold-deep); }
+.legal-header p {
+  font-size: 18px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 680px;
+}
+.legal-meta {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.legal-meta strong { color: var(--ink); font-weight: 500; }
+
+/* Body layout */
+.legal-body {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 64px 32px 120px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .legal-body { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 80px; }
+}
+
+.toc {
+  position: sticky;
+  top: 100px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.toc-label {
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.toc ol li {
+  counter-increment: toc;
+  padding-left: 24px;
+  position: relative;
+}
+.toc ol li::before {
+  content: counter(toc, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: var(--whisper);
+  font-weight: 500;
+}
+.toc a {
+  color: var(--mute);
+  text-transform: none;
+  border: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+.toc a:hover { color: var(--gold-deep); }
+@media (max-width: 920px) {
+  .toc { position: relative; top: 0; }
+}
+
+.legal-content section {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.legal-content section:last-child { border-bottom: none; }
+.legal-content section:first-child { padding-top: 0; }
+
+.legal-content h2 {
+  font-family: var(--display);
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.legal-content h2 em { font-style: italic; color: var(--gold-deep); }
+.legal-content .h-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+}
+.legal-content h3 {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  margin: 28px 0 10px;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.legal-content p {
+  font-size: 15.5px;
+  color: var(--ink-2);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.legal-content p:last-child { margin-bottom: 0; }
+.legal-content ul, .legal-content ol {
+  margin: 14px 0 14px 24px;
+  font-size: 15.5px;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.legal-content li { margin-bottom: 8px; padding-left: 6px; }
+.legal-content ul li::marker { color: var(--gold); }
+.legal-content ol li::marker { color: var(--gold-deep); font-weight: 500; }
+.legal-content strong { color: var(--ink); font-weight: 600; }
+
+.callout {
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: var(--gold-tint);
+  border-left: 3px solid var(--gold);
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+.callout strong { color: var(--gold-deep); }
+
+.warning {
+  background: rgba(122, 46, 46, 0.06);
+  border-left-color: var(--burgundy);
+}
+.warning strong { color: var(--burgundy); }
+
+.contact-block {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--paper-pure);
+  border: 1px solid var(--line);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.contact-block strong { color: var(--ink); display: block; margin-bottom: 4px; }
+.contact-block p { margin-bottom: 12px; font-size: 14.5px; }
+.contact-block p:last-child { margin-bottom: 0; }
+.contact-block .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px 32px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(248, 244, 236, 0.5);
+}
+footer .wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer a {
+  color: rgba(248, 244, 236, 0.7);
+  border: none;
+}
+footer a:hover { color: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">
+    <span>Anty</span><span class="ai">.ai</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<header class="legal-header">
+  <div class="legal-header-inner">
+    <div class="legal-eyebrow">Legal · Privacy</div>
+    <h1>Privacy <em>Policy.</em></h1>
+    <p>How Anty AI collects, uses, protects and shares your personal data — including the most sensitive data we handle, your biometric template. Written in plain language. Drafted to comply with India's DPDP Act 2023, the EU GDPR, the California CCPA, and any successor regimes.</p>
+    <div class="legal-meta">
+      <span><strong>Effective:</strong> [TO BE FILLED ON LAUNCH]</span>
+      <span><strong>Last updated:</strong> [TO BE FILLED ON LAUNCH]</span>
+      <span><strong>Version:</strong> 1.0 · Pre-launch draft</span>
+    </div>
+  </div>
+</header>
+
+<div class="legal-body">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#what-we-collect">What we collect</a></li>
+      <li><a href="#how-we-use">How we use it</a></li>
+      <li><a href="#sharing">Sharing &amp; disclosure</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#retention">Retention &amp; deletion</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#dpdp">DPDP Act (India)</a></li>
+      <li><a href="#gdpr">GDPR (EU/UK)</a></li>
+      <li><a href="#ccpa">CCPA (California)</a></li>
+      <li><a href="#transfers">Cross-border transfers</a></li>
+      <li><a href="#minors">Minors</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </aside>
+
+  <div class="legal-content">
+
+    <section id="overview">
+      <span class="h-num">01</span>
+      <h2>Overview.</h2>
+      <p>Anty AI is an identity-protection service that detects unauthorized use of your face, voice and likeness across the internet and helps you get such content removed. To do that, we hold the most sensitive personal data anyone could entrust to a service: a biometric template of you. This Privacy Policy explains how we treat that data, what you can ask us to do with it, and what we will never do with it.</p>
+      <p>Two commitments above all others:</p>
+      <ul>
+        <li><strong>We do not sell, rent, license or share your biometric data with any third party.</strong> Not advertisers, not partners, not affiliates, not data brokers. This is a contractual commitment, not a marketing line.</li>
+        <li><strong>You can demand deletion at any time.</strong> Within 30 days of a verified request, every trace of your data — including backups — is wiped from our systems, subject only to narrow legal-retention obligations clearly disclosed in this policy.</li>
+      </ul>
+      <div class="callout">
+        <strong>Plain-language summary.</strong> &nbsp; You give us biometric samples. We build an encrypted template. We use it only to find unauthorized content of you online. We never sell or share it. We delete it when you tell us to. That's the whole deal.
+      </div>
+    </section>
+
+    <section id="who-we-are">
+      <span class="h-num">02</span>
+      <h2>Who we are.</h2>
+      <p><strong>"Anty AI", "we", "us"</strong> refers to <em>[Insert legal entity name — e.g., Anty AI Technologies Private Limited]</em>, a company incorporated under the laws of India and operating the website antyai.com and the Anty AI service. Our registered office is at <em>[Insert registered address]</em>. Our CIN is <em>[Insert CIN]</em>.</p>
+      <p>We are the <strong>Data Fiduciary</strong> under India's Digital Personal Data Protection Act 2023 ("DPDP Act") and the <strong>Data Controller</strong> under the EU General Data Protection Regulation ("GDPR") and the UK GDPR for personal data processed about you in connection with the service.</p>
+    </section>
+
+    <section id="what-we-collect">
+      <span class="h-num">03</span>
+      <h2>What we <em>collect.</em></h2>
+      
+      <h3>3.1 Biometric data — the most sensitive category we handle.</h3>
+      <p>To recognize you in unauthorized content, we need a baseline of what you actually look and sound like. We collect:</p>
+      <ul>
+        <li><strong>Facial samples</strong> — a short live-recorded video, optional archival photographs, and any reference images you authorize us to use.</li>
+        <li><strong>Voice samples</strong> — a short live-recorded audio clip, optional archival recordings, voice clips you authorize.</li>
+        <li><strong>Optional non-biometric markers</strong> — known stage names, aliases, signature gestures, catchphrases, on-screen mannerisms, autograph patterns.</li>
+      </ul>
+      <p>From these samples we generate a single mathematical representation — a <strong>biometric template</strong> — that lets our matching engine recognize you across the internet. <em>The raw samples themselves are deleted after template generation unless you specifically ask us to retain archival copies for re-training as detection models improve.</em></p>
+
+      <h3>3.2 Account &amp; identity verification data.</h3>
+      <ul>
+        <li>Full name, date of birth (where required for legal-age verification), nationality.</li>
+        <li>A copy of one government-issued photo ID — Aadhaar, passport, driving licence, PAN, or equivalent.</li>
+        <li>For celebrity / public-figure tiers: documentation of authority to act (e.g., agency letter, manager authorization, NDA-bound representative).</li>
+      </ul>
+
+      <h3>3.3 Contact &amp; account-management data.</h3>
+      <ul>
+        <li>Email, phone number, preferred language.</li>
+        <li>Authorized representative details — manager, agent, lawyer, family member as applicable.</li>
+        <li>Subscription tier, billing history, support correspondence.</li>
+      </ul>
+
+      <h3>3.4 Payment &amp; deposit data.</h3>
+      <ul>
+        <li>Reservation deposit details (amount, escrow reference, refund preferences).</li>
+        <li>Subscription billing details (handled by our regulated payment processors — we never store full card numbers ourselves).</li>
+      </ul>
+
+      <h3>3.5 Service operations data.</h3>
+      <ul>
+        <li>Detection records — URLs, timestamps, content fingerprints, biometric match scores.</li>
+        <li>Takedown history — notices filed, platform responses, removal confirmations, counter-notices received.</li>
+        <li>Dashboard activity — logins, actions taken, settings changes.</li>
+      </ul>
+
+      <h3>3.6 Technical data.</h3>
+      <ul>
+        <li>IP address, browser type, device identifiers, time zone, OS version.</li>
+        <li>Cookies and similar technologies as described in our Cookie Notice.</li>
+      </ul>
+    </section>
+
+    <section id="how-we-use">
+      <span class="h-num">04</span>
+      <h2>How we <em>use</em> what we collect.</h2>
+      <p>We use your data only for the purposes listed below — and only with the lawful basis identified for each.</p>
+      <ol>
+        <li><strong>Generate and maintain your biometric template</strong> so we can match unauthorized content to your identity. <em>Lawful basis: explicit consent (DPDP Act §6, GDPR Art. 9(2)(a)).</em></li>
+        <li><strong>Crawl the internet and match content</strong> against your template, classify matches by intent, and deliver the resulting detections to your dashboard. <em>Lawful basis: contract performance (GDPR Art. 6(1)(b)) and explicit consent.</em></li>
+        <li><strong>File takedowns</strong> on your behalf with platforms, hosting providers, registrars and payment processors. <em>Lawful basis: contract performance and your explicit authorization.</em></li>
+        <li><strong>Provide the evidence package</strong> if you choose to pursue civil or criminal action against an uploader through your own legal counsel. <em>Lawful basis: legitimate interest in defending your rights, with your explicit authorization.</em></li>
+        <li><strong>Verify identity and prevent abuse</strong> — confirm you are who you claim to be (or are authorized to act for someone) before issuing takedowns in their name. <em>Lawful basis: legal obligation, legitimate interest in service integrity.</em></li>
+        <li><strong>Operate the service</strong> — billing, support, security, fraud prevention, audit logs. <em>Lawful basis: contract performance, legitimate interest.</em></li>
+        <li><strong>Improve detection models</strong> — only with your explicit, separately granted consent, and only on samples you affirmatively authorize for this purpose. We never use a celebrity client's data to train models that benefit other clients without that explicit consent. <em>Lawful basis: explicit, separately captured consent.</em></li>
+        <li><strong>Comply with law</strong> — respond to legally compelled requests, court orders, regulatory inquiries. <em>Lawful basis: legal obligation.</em></li>
+      </ol>
+      <div class="callout warning">
+        <strong>What we never do.</strong> &nbsp; We do not use your biometric data for advertising. We do not profile you for purposes other than service delivery. We do not sell, rent or license your data. We do not let any third party access your raw biometric samples or template — not even for "research" or "academic" purposes — without your specific, written authorization for that specific use.
+      </div>
+    </section>
+
+    <section id="sharing">
+      <span class="h-num">05</span>
+      <h2>Sharing &amp; <em>disclosure.</em></h2>
+      <p>The narrow list of parties with whom we share data, and the strict reasons we share it:</p>
+      <ul>
+        <li><strong>Platforms and hosts</strong> (YouTube, Meta, TikTok, X, Telegram, etc.) — limited to the takedown notice itself: the source URL, your name, the lawful basis for takedown, and proof of authority. We never share your raw biometric template or samples with platforms.</li>
+        <li><strong>Sub-processors</strong> we rely on to operate the service — cloud-hosting providers, payment processors, escrow partners, KYC/identity-verification vendors, legal-document automation services. Each is bound by a Data Processing Agreement that mirrors or exceeds the protections in this Policy. A current list of sub-processors is published at antyai.com/sub-processors.</li>
+        <li><strong>Your authorized representatives</strong> — agents, managers, legal counsel — only as you have explicitly designated.</li>
+        <li><strong>Law enforcement and regulators</strong> — only when legally compelled (subpoena, court order, statutory request) and subject to the narrow scope of what is compelled. We will tell you about any such request unless we are legally prohibited from doing so.</li>
+        <li><strong>Acquirers in a corporate transaction</strong> — if Anty AI is acquired, your data may transfer to the acquirer, but only on terms at least as protective as this Policy, and you will be notified before the transfer takes effect.</li>
+      </ul>
+      <p><strong>We do not share data with advertisers, data brokers, AI training companies, or any party seeking to monetize biometric data. We never have, and we never will.</strong></p>
+    </section>
+
+    <section id="security">
+      <span class="h-num">06</span>
+      <h2>How we <em>protect</em> your data.</h2>
+      <p>Your data is encrypted both at rest and in transit. Specifically:</p>
+      <ul>
+        <li><strong>Encryption at rest</strong> — AES-256 for biometric templates and sensitive identifiers.</li>
+        <li><strong>Encryption in transit</strong> — TLS 1.3 for all API and dashboard traffic.</li>
+        <li><strong>Access controls</strong> — strict role-based access, multi-factor authentication for all employees, segregation of duties so that no single employee can both view your biometric template and modify our security controls.</li>
+        <li><strong>Audit logs</strong> — every access to a biometric template is logged immutably, with the employee identity, the time and the reason. Logs are reviewed regularly.</li>
+        <li><strong>Compliance certifications</strong> — we are pursuing SOC 2 Type II and ISO 27001 certification ahead of our public launch in 2026. Once obtained, audit reports will be available to qualified clients under NDA.</li>
+        <li><strong>Penetration testing</strong> — third-party security testing is conducted at least annually and after every major release.</li>
+        <li><strong>Vulnerability disclosure</strong> — we maintain a responsible-disclosure programme at security@antyai.com.</li>
+      </ul>
+      <div class="callout warning">
+        <strong>No system is unbreachable.</strong> &nbsp; While we apply industry-leading security controls, we cannot guarantee that no breach will ever occur. If a security incident affecting your data does occur, we will notify you as required by applicable law — under DPDP Act we will notify the Data Protection Board and affected Data Principals; under GDPR within 72 hours of becoming aware where the risk threshold is met; under CCPA in line with California breach-notification requirements.
+      </div>
+    </section>
+
+    <section id="retention">
+      <span class="h-num">07</span>
+      <h2>How long we <em>keep</em> your data.</h2>
+      <ul>
+        <li><strong>Biometric templates</strong> — for the duration of your active subscription. On termination or verified deletion request, deleted within 30 days from primary systems and within 90 days from encrypted backups.</li>
+        <li><strong>Raw biometric samples</strong> — deleted immediately after template generation unless you explicitly authorize retention for model-improvement purposes.</li>
+        <li><strong>Account data</strong> — retained for the duration of your subscription plus 7 years for tax and statutory record-keeping (Companies Act 2013, Income Tax Act 1961).</li>
+        <li><strong>Detection &amp; takedown records</strong> — retained for 7 years to enable legal defense, regulatory audit, and counter-notice handling.</li>
+        <li><strong>Payment records</strong> — retained as required by tax, anti-money-laundering and accounting law (typically 7 years in India, longer in some jurisdictions).</li>
+        <li><strong>Support correspondence</strong> — retained for 3 years from last contact.</li>
+      </ul>
+    </section>
+
+    <section id="your-rights">
+      <span class="h-num">08</span>
+      <h2>Your <em>rights.</em></h2>
+      <p>Regardless of where you live, you have the following rights with respect to your personal data:</p>
+      <ol>
+        <li><strong>Right to access</strong> — request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to rectification</strong> — correct inaccurate or incomplete data.</li>
+        <li><strong>Right to erasure</strong> — demand deletion, subject only to narrow legal-retention exceptions explicitly disclosed above.</li>
+        <li><strong>Right to withdraw consent</strong> — at any time, with effect from the date of withdrawal.</li>
+        <li><strong>Right to data portability</strong> — receive your data in a structured, commonly-used, machine-readable format.</li>
+        <li><strong>Right to object</strong> — to processing based on legitimate interest.</li>
+        <li><strong>Right to lodge a complaint</strong> — with the supervisory authority in your jurisdiction.</li>
+      </ol>
+      <p>To exercise any of these rights, email <a href="mailto:privacy@antyai.com">privacy@antyai.com</a>. We respond within 30 days (or sooner where law requires it). We may need to verify your identity before acting on the request — necessary to prevent fraud against celebrities whose accounts are themselves targets.</p>
+    </section>
+
+    <section id="dpdp">
+      <span class="h-num">09</span>
+      <h2>For Data Principals in <em>India</em> — DPDP Act 2023.</h2>
+      <p>If you are located in India, the Digital Personal Data Protection Act 2023 ("DPDP Act") applies to your personal data. Under the DPDP Act:</p>
+      <ul>
+        <li>Anty AI is the <strong>Data Fiduciary</strong>; you are the <strong>Data Principal</strong>.</li>
+        <li>Biometric data is classified as sensitive personal data; we process it only with your explicit, free, specific, informed and unambiguous consent.</li>
+        <li>You have the rights under §11–§14 of the DPDP Act: access, correction, completion, updating, erasure, grievance redressal and nomination.</li>
+        <li>You may withdraw consent at any time; consequences of withdrawal — primarily that we can no longer provide the service — are explained in our Reservation Terms and Subscription Terms.</li>
+        <li>We do not engage in "significant data fiduciary" activities such as processing children's data without parental consent or making decisions that have a significant effect on Data Principals through purely automated means without human review.</li>
+      </ul>
+      <p>For a separate, fuller account of how the DPDP Act applies to Anty AI, see our dedicated <a href="dpdp-notice.html">DPDP Notice</a>.</p>
+      <div class="contact-block">
+        <span class="label">Grievance Officer · India</span>
+        <p><strong>Name:</strong> [TO BE APPOINTED BEFORE LAUNCH]</p>
+        <p><strong>Email:</strong> grievance@antyai.com</p>
+        <p><strong>Postal address:</strong> [TO BE FILLED]</p>
+        <p><strong>Response time:</strong> Acknowledgement within 48 hours; resolution within 30 days as required by §8(10) of the DPDP Act.</p>
+      </div>
+    </section>
+
+    <section id="gdpr">
+      <span class="h-num">10</span>
+      <h2>For Data Subjects in the <em>EU</em> &amp; <em>UK</em> — GDPR.</h2>
+      <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the EU General Data Protection Regulation, the UK GDPR and the Swiss Federal Data Protection Act apply.</p>
+      <ul>
+        <li>Anty AI is the <strong>Data Controller</strong>; you are the <strong>Data Subject</strong>.</li>
+        <li>Biometric data used to uniquely identify a natural person is a special category of personal data under GDPR Article 9; we process it only on the basis of your explicit consent under Article 9(2)(a).</li>
+        <li>You have the rights under Articles 15–22 of the GDPR: access, rectification, erasure ("right to be forgotten"), restriction, data portability, objection, and not to be subject to solely automated decision-making.</li>
+        <li>You have the right to lodge a complaint with a supervisory authority — for EU residents, the data protection authority of your member state; for UK residents, the Information Commissioner's Office (ICO).</li>
+      </ul>
+      <div class="contact-block">
+        <span class="label">EU / UK Representative</span>
+        <p><strong>Representative entity:</strong> [TO BE APPOINTED BEFORE EU LAUNCH UNDER GDPR ART. 27]</p>
+        <p><strong>Email:</strong> eu-rep@antyai.com</p>
+      </div>
+      <div class="contact-block">
+        <span class="label">Data Protection Officer</span>
+        <p><strong>Name:</strong> [TO BE APPOINTED]</p>
+        <p><strong>Email:</strong> dpo@antyai.com</p>
+      </div>
+    </section>
+
+    <section id="ccpa">
+      <span class="h-num">11</span>
+      <h2>For California residents — <em>CCPA / CPRA.</em></h2>
+      <p>If you are a California resident, the California Consumer Privacy Act (as amended by the California Privacy Rights Act) gives you specific rights. The categories of personal information we collect, why we collect them, and our retention periods are described in §3, §4 and §7 above.</p>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Know what personal information is collected about you.</li>
+        <li>Know whether it is sold or disclosed and to whom — for Anty AI: <strong>we do not sell personal information.</strong></li>
+        <li>Opt out of any future sale of personal information should our practices ever change (they will not, but the right exists).</li>
+        <li>Access, delete and correct personal information.</li>
+        <li>Limit use of sensitive personal information — including biometric data.</li>
+        <li>Not be discriminated against for exercising these rights.</li>
+      </ul>
+      <p>Email <a href="mailto:privacy@antyai.com">privacy@antyai.com</a> to exercise these rights. Authorized agents may submit requests on your behalf with proof of authorization.</p>
+    </section>
+
+    <section id="transfers">
+      <span class="h-num">12</span>
+      <h2>Cross-border <em>data transfers.</em></h2>
+      <p>Anty AI operates from India. To provide a global service we use cloud infrastructure in multiple regions and have sub-processors in several countries. Your data may be stored or processed outside the country in which you reside.</p>
+      <p>For each cross-border transfer, we apply the appropriate legal mechanism:</p>
+      <ul>
+        <li><strong>From the EU/UK:</strong> Standard Contractual Clauses (2021), supplemented by transfer-impact assessments where required.</li>
+        <li><strong>From India:</strong> transfers comply with §16 of the DPDP Act and any restrictions notified by the Central Government from time to time.</li>
+        <li><strong>From other jurisdictions:</strong> the legal mechanism appropriate to that jurisdiction.</li>
+      </ul>
+      <p>We will, on written request, disclose to you the countries in which your data is stored or processed.</p>
+    </section>
+
+    <section id="minors">
+      <span class="h-num">13</span>
+      <h2>Minors.</h2>
+      <p>The Anty AI service is not intended for use by individuals under the age of 18. We do not knowingly collect personal data of minors. If we discover that we have collected data from a minor without verified parental consent, we will delete that data promptly.</p>
+      <p>For child performers and minor public figures, the service can only be used by a verified parent, legal guardian, or court-appointed representative of the minor, in accordance with §9 of the DPDP Act 2023 and equivalent provisions in other jurisdictions.</p>
+    </section>
+
+    <section id="changes">
+      <span class="h-num">14</span>
+      <h2>Changes to this <em>Policy.</em></h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes — changes that affect your rights, the types of data we collect, the parties we share with, or the lawful basis for processing — we will:</p>
+      <ul>
+        <li>Notify you by email at least 30 days before the change takes effect.</li>
+        <li>Post a prominent notice on the antyai.com site.</li>
+        <li>Where the change requires renewed consent (e.g., to add a new processing purpose for biometric data), we will request your renewed consent. If consent is not given, the change will not apply to you.</li>
+      </ul>
+      <p>The current version, effective date and a complete change log are always posted at antyai.com/privacy.</p>
+    </section>
+
+    <section id="contact">
+      <span class="h-num">15</span>
+      <h2>How to <em>reach us.</em></h2>
+      <div class="contact-block">
+        <span class="label">General Privacy Enquiries</span>
+        <p><strong>Email:</strong> <a href="mailto:privacy@antyai.com">privacy@antyai.com</a></p>
+        <p><strong>Response time:</strong> Within 7 business days for routine enquiries; within 30 days for rights requests.</p>
+      </div>
+      <div class="contact-block">
+        <span class="label">Postal Address</span>
+        <p><strong>Anty AI</strong></p>
+        <p>[Insert registered office address]</p>
+        <p>India</p>
+      </div>
+      <div class="contact-block">
+        <span class="label">Other contacts</span>
+        <p><strong>Grievance Officer (India / DPDP):</strong> grievance@antyai.com</p>
+        <p><strong>Data Protection Officer (EU / UK / Global):</strong> dpo@antyai.com</p>
+        <p><strong>Security disclosures:</strong> security@antyai.com</p>
+        <p><strong>Press / press enquiries:</strong> press@antyai.com</p>
+        <p><strong>Legal notices:</strong> legal@antyai.com</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ANTY AI · ANTYAI.COM · ALL RIGHTS RESERVED</span>
+    <span>
+      <a href="terms.html">Terms</a>
+      &nbsp;·&nbsp;
+      <a href="privacy.html">Privacy</a>
+      &nbsp;·&nbsp;
+      <a href="dpdp-notice.html">DPDP</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

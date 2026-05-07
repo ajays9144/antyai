@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Anty AI — Reservation Terms and Terms of Service. The legal terms governing your relationship with Anty AI, including the refundable interest deposit." />
+<title>Reservation Terms · Anty AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#F8F4EC; --cream-2:#F2ECDD; --paper:#FDFAF3; --paper-pure:#FFFFFF;
+  --ink:#1A1814; --ink-2:#2D2A23; --mute:#6B6457; --whisper:#9C9586;
+  --gold:#B8923D; --gold-deep:#8C6F2E; --gold-light:#D4B66E;
+  --gold-soft:#F0E5C8; --gold-tint:rgba(184,146,61,0.08);
+  --burgundy:#7A2E2E; --olive:#5C6B3D;
+  --line:rgba(26,24,20,0.10); --line-soft:rgba(26,24,20,0.05); --line-gold:rgba(184,146,61,0.25);
+  --display:'Fraunces','Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--gold); color: var(--paper-pure); }
+a { color: var(--gold-deep); text-decoration: none; border-bottom: 1px solid var(--line-gold); transition: all 0.2s ease; }
+a:hover { color: var(--ink); border-color: var(--gold); }
+
+nav {
+  position: sticky; top: 0; z-index: 100; padding: 18px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(248,244,236,0.92); backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);
+}
+.brand { font-family: var(--display); font-size: 26px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: var(--ink); border: none; }
+.brand .ai { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--gold-deep); text-transform: uppercase; position: relative; top: -2px; }
+.nav-back { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 18px; border: 1px solid var(--line); color: var(--ink); border-radius: 999px; transition: all 0.3s ease; }
+.nav-back:hover { border-color: var(--gold); color: var(--gold-deep); }
+
+.legal-header { padding: 80px 32px 48px; border-bottom: 1px solid var(--line); background: var(--cream); }
+.legal-header-inner { max-width: 880px; margin: 0 auto; }
+.legal-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 18px; display: inline-flex; gap: 10px; align-items: center; }
+.legal-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.legal-header h1 { font-family: var(--display); font-size: clamp(40px,6vw,64px); line-height: 1.02; letter-spacing: -0.02em; font-variation-settings: "opsz" 144, "SOFT" 50; margin-bottom: 24px; color: var(--ink); }
+.legal-header h1 em { font-style: italic; color: var(--gold-deep); }
+.legal-header p { font-size: 18px; color: var(--ink-2); line-height: 1.6; max-width: 680px; }
+.legal-meta { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); }
+.legal-meta strong { color: var(--ink); font-weight: 500; }
+
+.legal-body { max-width: 880px; margin: 0 auto; padding: 64px 32px 120px; display: grid; grid-template-columns: 220px 1fr; gap: 64px; align-items: start; }
+@media (max-width: 920px) { .legal-body { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 80px; } }
+
+.toc { position: sticky; top: 100px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; }
+.toc-label { text-transform: uppercase; color: var(--gold-deep); letter-spacing: 0.16em; margin-bottom: 18px; font-weight: 500; }
+.toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 8px; }
+.toc ol li { counter-increment: toc; padding-left: 24px; position: relative; }
+.toc ol li::before { content: counter(toc, decimal-leading-zero); position: absolute; left: 0; color: var(--whisper); font-weight: 500; }
+.toc a { color: var(--mute); text-transform: none; border: none; font-family: var(--sans); font-size: 13px; letter-spacing: 0; line-height: 1.5; }
+.toc a:hover { color: var(--gold-deep); }
+@media (max-width: 920px) { .toc { position: relative; top: 0; } }
+
+.legal-content section { padding: 32px 0; border-bottom: 1px solid var(--line-soft); }
+.legal-content section:last-child { border-bottom: none; }
+.legal-content section:first-child { padding-top: 0; }
+.legal-content h2 { font-family: var(--display); font-size: clamp(26px,3vw,32px); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 8px; font-variation-settings: "opsz" 144, "SOFT" 50; }
+.legal-content h2 em { font-style: italic; color: var(--gold-deep); }
+.legal-content .h-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 8px; display: block; font-weight: 500; }
+.legal-content h3 { font-family: var(--display); font-size: 19px; font-weight: 500; letter-spacing: -0.005em; margin: 28px 0 10px; color: var(--ink); font-variation-settings: "opsz" 144, "SOFT" 50; }
+.legal-content p { font-size: 15.5px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+.legal-content p:last-child { margin-bottom: 0; }
+.legal-content ul, .legal-content ol { margin: 14px 0 14px 24px; font-size: 15.5px; color: var(--ink-2); line-height: 1.7; }
+.legal-content li { margin-bottom: 8px; padding-left: 6px; }
+.legal-content ul li::marker { color: var(--gold); }
+.legal-content ol li::marker { color: var(--gold-deep); font-weight: 500; }
+.legal-content strong { color: var(--ink); font-weight: 600; }
+
+.callout { margin: 24px 0; padding: 20px 24px; background: var(--gold-tint); border-left: 3px solid var(--gold); font-size: 14.5px; color: var(--ink-2); line-height: 1.65; }
+.callout strong { color: var(--gold-deep); }
+.warning { background: rgba(122,46,46,0.06); border-left-color: var(--burgundy); }
+.warning strong { color: var(--burgundy); }
+
+.contact-block { margin-top: 24px; padding: 24px; background: var(--paper-pure); border: 1px solid var(--line); font-size: 14.5px; line-height: 1.6; }
+.contact-block strong { color: var(--ink); display: block; margin-bottom: 4px; }
+.contact-block p { margin-bottom: 12px; font-size: 14.5px; }
+.contact-block p:last-child { margin-bottom: 0; }
+.contact-block .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); font-weight: 500; }
+
+footer { background: var(--ink); color: var(--paper); padding: 48px 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: rgba(248,244,236,0.5); }
+footer .wrap { max-width: 880px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+footer a { color: rgba(248,244,236,0.7); border: none; }
+footer a:hover { color: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand"><span>Anty</span><span class="ai">.ai</span></a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<header class="legal-header">
+  <div class="legal-header-inner">
+    <div class="legal-eyebrow">Legal · Reservation Terms</div>
+    <h1>Reservation <em>Terms.</em></h1>
+    <p>The terms that govern your reservation of a place on the Anty AI waitlist, including the refundable interest deposit. These terms also serve as the framework Terms of Service that will apply once the service launches in 2026, until they are superseded by a tier-specific Subscription Agreement.</p>
+    <div class="legal-meta">
+      <span><strong>Effective:</strong> [TO BE FILLED ON LAUNCH]</span>
+      <span><strong>Last updated:</strong> [TO BE FILLED ON LAUNCH]</span>
+      <span><strong>Version:</strong> 1.0 · Pre-launch draft</span>
+    </div>
+  </div>
+</header>
+
+<div class="legal-body">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#agreement">The agreement</a></li>
+      <li><a href="#parties">Parties &amp; eligibility</a></li>
+      <li><a href="#service">What we are building</a></li>
+      <li><a href="#deposit">The interest deposit</a></li>
+      <li><a href="#refund">Refunds</a></li>
+      <li><a href="#scope">Scope of service</a></li>
+      <li><a href="#user-obligations">Your obligations</a></li>
+      <li><a href="#our-obligations">Our obligations</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#warranties">Warranties &amp; disclaimers</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#indemnity">Indemnity</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#governing-law">Governing law</a></li>
+      <li><a href="#disputes">Dispute resolution</a></li>
+      <li><a href="#changes">Changes to terms</a></li>
+      <li><a href="#general">General provisions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </aside>
+
+  <div class="legal-content">
+
+    <section id="agreement">
+      <span class="h-num">01</span>
+      <h2>The <em>agreement.</em></h2>
+      <p>These Reservation Terms are a binding contract between you and Anty AI. By submitting the reservation form on antyai.com, paying an interest deposit, or accepting an early-access invitation, you confirm that you have read, understood and agreed to these terms.</p>
+      <p>If you do not agree, do not submit the form and do not pay a deposit. There is no obligation either way until the form is submitted and the deposit is received.</p>
+      <div class="callout">
+        <strong>Plain-language summary.</strong> &nbsp; You're reserving a place on our waitlist with a refundable deposit. The deposit goes into escrow. When we launch in 2026, the deposit is credited to your subscription. If you change your mind before launch, ask for a refund and you get it back. That's it.
+      </div>
+    </section>
+
+    <section id="parties">
+      <span class="h-num">02</span>
+      <h2>Parties &amp; <em>eligibility.</em></h2>
+
+      <h3>2.1 Who you are.</h3>
+      <p>You may reserve a place if you are:</p>
+      <ul>
+        <li>An individual aged 18 or over with full legal capacity to enter contracts.</li>
+        <li>A legal entity (company, agency, studio, league) acting through an authorized representative.</li>
+        <li>An authorized representative of a third party (manager, agent, lawyer, family member) acting under documented authority. Reservations made on behalf of a third party require that party's verifiable consent before any biometric data is collected at onboarding.</li>
+      </ul>
+
+      <h3>2.2 Who we are.</h3>
+      <p>Anty AI is operated by <em>[Insert legal entity name — e.g., Anty AI Technologies Private Limited]</em>, a company incorporated under the laws of India with CIN <em>[Insert CIN]</em> and registered office at <em>[Insert address]</em>.</p>
+
+      <h3>2.3 Restricted persons.</h3>
+      <p>You may not reserve a place if you are subject to sanctions imposed by the Government of India, the United Nations Security Council, the United States, the European Union, the United Kingdom or other applicable jurisdictions; or if you are located in a country in respect of which providing this service is prohibited by Indian or applicable foreign law.</p>
+    </section>
+
+    <section id="service">
+      <span class="h-num">03</span>
+      <h2>What we are <em>building.</em></h2>
+      <p>Anty AI will be an identity-protection service that:</p>
+      <ol>
+        <li>Maintains an encrypted biometric template of an authorized client based on samples the client provides.</li>
+        <li>Uses that template to detect content on the public internet that appears to use the client's likeness without authorization.</li>
+        <li>Files takedown notices with platforms, hosts and intermediaries under applicable legal frameworks (DMCA, TAKE IT DOWN Act, NO FAKES Act, EU AI Act, India IT Rules, DPDP Act, ELVIS Act, personality-rights case law and others as relevant).</li>
+        <li>Re-monitors continuously and re-files takedowns for re-uploads.</li>
+        <li>Reports detection, action and outcome through a dashboard.</li>
+      </ol>
+      <p><strong>The launch date for the public service is targeted for 2026 but is not guaranteed.</strong> If launch is materially delayed, you may demand a full deposit refund without questions asked.</p>
+    </section>
+
+    <section id="deposit">
+      <span class="h-num">04</span>
+      <h2>The interest <em>deposit.</em></h2>
+
+      <h3>4.1 What it is.</h3>
+      <p>The interest deposit is a refundable sum you pay at the time of reservation, between ₹500 and ₹1,00,000 (or USD/foreign-currency equivalent), to secure your place on the early-access waitlist and lock in launch pricing for the tier you indicated on the reservation form.</p>
+
+      <h3>4.2 What it is not.</h3>
+      <ul>
+        <li><strong>It is not a security or an investment.</strong> It does not entitle you to equity, dividends, profit-sharing, or any return on capital.</li>
+        <li><strong>It is not a deposit-taking activity</strong> within the meaning of §73 of the Companies Act 2013, the Banning of Unregulated Deposit Schemes Act 2019, or RBI deposit-taking regulations. It is a customer prepayment held in escrow against an identified future service.</li>
+        <li><strong>It is not a participation in a Collective Investment Scheme</strong> within the meaning of §11AA of the SEBI Act 1992.</li>
+        <li><strong>It earns no interest, return or yield.</strong></li>
+      </ul>
+
+      <h3>4.3 Where it is held.</h3>
+      <p>All interest deposits are held in a regulated escrow account with our partner financial institution <em>[Insert escrow partner name — e.g., Razorpay Trust / EscrowPay / equivalent]</em>. They are segregated from Anty AI's operating funds. Anty AI does not have unilateral access to the escrow account; release of funds is governed by the escrow agreement.</p>
+
+      <h3>4.4 What happens at launch.</h3>
+      <p>When the Anty AI service launches and you choose to onboard, the full deposit amount is credited toward your first subscription year of the tier you choose. If you choose a tier whose annual fee is lower than your deposit, the surplus is either refunded to you or carried forward as credit for the following year, at your option.</p>
+
+      <h3>4.5 If launch is delayed.</h3>
+      <p>If the service has not launched by 31 December 2027, you may demand a full deposit refund regardless of any other provision. We will process such refunds within 30 days.</p>
+
+      <div class="callout warning">
+        <strong>Important.</strong> &nbsp; Do not pay an interest deposit if you cannot afford to have the funds inaccessible during the escrow period, or if you are uncomfortable with the possibility — however small — of an escrow-partner failure. Like any pre-launch product, Anty AI involves execution risk. Read this section carefully.
+      </div>
+    </section>
+
+    <section id="refund">
+      <span class="h-num">05</span>
+      <h2>Refunds.</h2>
+      <p>You may request a full refund of your interest deposit at any time before the launch of the service, by emailing <a href="mailto:refunds@antyai.com">refunds@antyai.com</a> from the email address on file. We will:</p>
+      <ul>
+        <li>Acknowledge your request within 2 business days.</li>
+        <li>Verify your identity to prevent fraud.</li>
+        <li>Initiate the refund within 7 business days of verified request.</li>
+        <li>Pay the full deposit amount to your originating bank account or payment instrument, less only any payment-processor fees that are legally non-recoverable (these are typically nil for domestic Indian transactions; please ask if you are in doubt).</li>
+      </ul>
+      <p>You do not need to give a reason. Refunds are honored in full as a matter of policy.</p>
+    </section>
+
+    <section id="scope">
+      <span class="h-num">06</span>
+      <h2>Scope of <em>service.</em></h2>
+      <p>The Anty AI service, when launched, will provide the functions described in §3 above. The following are not within the scope of the service, regardless of any other communication or marketing:</p>
+      <ol>
+        <li><strong>We do not prevent the creation of unauthorized content.</strong> Open-source generative models exist and cannot be unbuilt; we cannot stop a third party from generating or possessing content that uses your likeness.</li>
+        <li><strong>We do not investigate, identify, or pursue legal action against uploaders or creators of unauthorized content.</strong> We provide an evidence package; any legal action is conducted by your own legal counsel.</li>
+        <li><strong>We do not guarantee 100% removal.</strong> Industry-leading services achieve 94–98% removal on cooperative platforms. Telegram, certain offshore hosts, end-to-end encrypted channels and the dark web are partially out of reach. A 5% residual non-removal rate is the honest baseline.</li>
+        <li><strong>We do not remove content protected by free-speech principles in the applicable jurisdiction</strong> — including parody, satire, news, documentary, biographical and political-commentary content — except where a court of competent jurisdiction has ordered such removal.</li>
+        <li><strong>We do not provide legal advice or representation.</strong> Our case officers may help you understand the legal mechanism being invoked for a takedown but cannot advise you on broader legal strategy. For that, retain qualified counsel.</li>
+        <li><strong>We do not warrant any specific timeline</strong> for detection or removal beyond stated industry baselines and reasonable best efforts. Real-world timing depends on platform cooperation, content classification, jurisdictional complexity and other factors outside our control.</li>
+      </ol>
+    </section>
+
+    <section id="user-obligations">
+      <span class="h-num">07</span>
+      <h2>Your <em>obligations.</em></h2>
+      <p>You agree:</p>
+      <ul>
+        <li>To provide accurate and complete information at reservation and at onboarding.</li>
+        <li>To submit only biometric samples of yourself, or of a person on whose behalf you have verifiable, lawful authority to act.</li>
+        <li>Not to use the service to file takedowns of content that is yours, that you have authorized, that is protected by free-speech principles, or that you know to be a legitimate fan, parody, satire, news or commentary work.</li>
+        <li>Not to use the service to harass, censor, or silence critics, whistleblowers, journalists or other speakers.</li>
+        <li>To pay subscription fees on time once the service launches and you have onboarded.</li>
+        <li>To comply with applicable law in your use of the service and any output it produces.</li>
+      </ul>
+      <p>Material breach of these obligations may result in suspension or termination of your subscription, retention of your deposit (where the breach itself causes us loss), and reporting to law enforcement where the breach is criminal.</p>
+    </section>
+
+    <section id="our-obligations">
+      <span class="h-num">08</span>
+      <h2>Our <em>obligations.</em></h2>
+      <p>We commit to:</p>
+      <ul>
+        <li>Use commercially reasonable efforts to launch the service in 2026.</li>
+        <li>Hold your interest deposit in regulated escrow until launch or refund.</li>
+        <li>Apply industry-leading security to your biometric data, including encryption at rest and in transit.</li>
+        <li>Honor all applicable rights you have under DPDP Act, GDPR, CCPA and other privacy law.</li>
+        <li>Never sell, license or share your biometric data with third parties beyond the narrow purposes disclosed in our <a href="privacy.html">Privacy Policy</a>.</li>
+        <li>Refund your deposit on request, no questions asked, before launch.</li>
+        <li>Operate transparently — publish a transparency report disclosing takedown volumes, categories, and counter-notices.</li>
+        <li>Honor counter-notices and operate due-process safeguards against false takedowns.</li>
+      </ul>
+    </section>
+
+    <section id="ip">
+      <span class="h-num">09</span>
+      <h2>Intellectual <em>property.</em></h2>
+
+      <h3>9.1 Our IP.</h3>
+      <p>Anty AI owns all rights in the antyai.com website, the Anty AI service, our software, models, dashboards, documentation, brand and trademarks. Nothing in these terms grants you any licence in our IP except a limited, non-exclusive, revocable right to use the service in accordance with these terms.</p>
+
+      <h3>9.2 Your IP.</h3>
+      <p>You retain all rights in your name, image, voice, likeness, biometric data and any content you submit. You grant Anty AI a limited, non-exclusive, royalty-free licence to use that data solely for the purpose of providing the service to you — to detect unauthorized content, file takedowns, and re-monitor. The licence terminates when your subscription ends and your data is deleted. We do not acquire any rights in your likeness for any other purpose.</p>
+
+      <h3>9.3 Detection records.</h3>
+      <p>Detection records, takedown notices, platform correspondence and the resulting outcomes are jointly the work-product of you and Anty AI. You may use them in any legal proceeding or with any third party as you see fit. We may use anonymized, aggregated detection statistics for service-improvement and reporting, but never in a way that identifies you.</p>
+    </section>
+
+    <section id="privacy">
+      <span class="h-num">10</span>
+      <h2>Privacy.</h2>
+      <p>Our handling of your personal data — including biometric data — is governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these terms by reference. Material updates to the Privacy Policy require renewed consent for any new processing purpose.</p>
+      <p>For users in India, see also our <a href="dpdp-notice.html">DPDP Notice</a> for additional disclosures required under the Digital Personal Data Protection Act 2023.</p>
+    </section>
+
+    <section id="warranties">
+      <span class="h-num">11</span>
+      <h2>Warranties &amp; <em>disclaimers.</em></h2>
+      <p>Anty AI provides the service "as is" and "as available" except where applicable law provides otherwise. We make the following limited warranties only:</p>
+      <ul>
+        <li>That we have the corporate authority to enter this agreement.</li>
+        <li>That we will hold your deposit in regulated escrow as described in §4.</li>
+        <li>That we will apply commercially reasonable security to your data as described in §6 of the Privacy Policy.</li>
+        <li>That we will refund your deposit on request as described in §5 of these terms.</li>
+      </ul>
+      <p>We <strong>do not warrant</strong> that:</p>
+      <ul>
+        <li>The service will detect every piece of unauthorized content.</li>
+        <li>Every takedown request will succeed.</li>
+        <li>Removal will occur within any specific time frame.</li>
+        <li>Detection or takedown will be effective against creators or uploaders not subject to platform policies, or against content hosted in encrypted, offshore or dark-web channels.</li>
+      </ul>
+      <p>Statutory warranties under the Consumer Protection Act 2019 (India) and equivalent foreign legislation are preserved where they cannot lawfully be excluded.</p>
+    </section>
+
+    <section id="liability">
+      <span class="h-num">12</span>
+      <h2>Limitation of <em>liability.</em></h2>
+      <p>To the maximum extent permitted by applicable law:</p>
+      <ul>
+        <li>Anty AI's total aggregate liability under or in connection with these terms — whether in contract, tort, statute or otherwise — is capped at the greater of (a) the interest deposit you paid, or (b) the subscription fees you paid in the 12 months preceding the claim.</li>
+        <li>We are not liable for indirect, consequential, incidental, special, punitive or exemplary damages, including loss of profits, loss of business opportunity, loss of reputation, or loss of goodwill.</li>
+        <li>We are not liable for damages arising from third-party platforms refusing to act on takedowns, from re-uploads we have not yet detected, from failures of platforms or hosts outside our control, or from acts of regulators, governments or courts.</li>
+      </ul>
+      <p>Nothing in these terms excludes liability that cannot lawfully be excluded — including liability for death, personal injury caused by negligence, or fraud.</p>
+    </section>
+
+    <section id="indemnity">
+      <span class="h-num">13</span>
+      <h2>Indemnity.</h2>
+      <p>You agree to indemnify and hold Anty AI harmless against third-party claims, damages, costs and reasonable legal fees arising from:</p>
+      <ul>
+        <li>Your breach of these terms.</li>
+        <li>Your submission of biometric data of a person without verifiable lawful authority.</li>
+        <li>Takedowns issued at your direction that are later determined to be improper or in bad faith.</li>
+        <li>Your use of detection records or evidence packages we provide in legal proceedings.</li>
+      </ul>
+    </section>
+
+    <section id="termination">
+      <span class="h-num">14</span>
+      <h2>Termination.</h2>
+      <p><strong>By you, before launch:</strong> request a refund per §5. The reservation is cancelled and your deposit is returned in full.</p>
+      <p><strong>By you, after launch:</strong> cancel your subscription per the Subscription Agreement. Pro-rata refund terms will be governed by the Subscription Agreement.</p>
+      <p><strong>By us:</strong> we may terminate the reservation or any subsequent subscription if (a) you materially breach these terms; (b) you submit or attempt to submit data without lawful authority; (c) we are required to do so by court order or applicable law; or (d) we discontinue the service entirely. In case (d), all deposits and prepaid subscription fees are refunded in full.</p>
+    </section>
+
+    <section id="governing-law">
+      <span class="h-num">15</span>
+      <h2>Governing <em>law.</em></h2>
+      <p>These terms are governed by the laws of the Republic of India, without regard to conflict-of-law principles. The courts at Mumbai (or, if applicable, Delhi) have exclusive jurisdiction subject to §16 below.</p>
+      <p>For consumers resident in the European Union, the United Kingdom, or any other jurisdiction whose mandatory consumer-protection law cannot be derogated from by contract, the rights you enjoy under that mandatory law are preserved.</p>
+    </section>
+
+    <section id="disputes">
+      <span class="h-num">16</span>
+      <h2>Dispute <em>resolution.</em></h2>
+
+      <h3>16.1 Good-faith negotiation.</h3>
+      <p>Before formal proceedings, parties will attempt good-faith negotiation for at least 30 days, beginning when one party emails the other at <a href="mailto:legal@antyai.com">legal@antyai.com</a> describing the dispute.</p>
+
+      <h3>16.2 Arbitration.</h3>
+      <p>If negotiation fails, the dispute will be resolved by arbitration under the Arbitration and Conciliation Act 1996, by a sole arbitrator appointed by mutual agreement (or, failing agreement within 30 days, by the Mumbai Centre for International Arbitration). The seat of arbitration is Mumbai. The language is English. The arbitrator's award is final and binding.</p>
+
+      <h3>16.3 Carve-outs.</h3>
+      <p>Nothing in this section prevents either party from seeking interim or injunctive relief from a court of competent jurisdiction, nor from filing a complaint with a regulator (e.g., the Data Protection Board of India under the DPDP Act).</p>
+    </section>
+
+    <section id="changes">
+      <span class="h-num">17</span>
+      <h2>Changes to <em>these terms.</em></h2>
+      <p>We may update these terms from time to time. For material changes — those that affect your rights, the deposit, refund mechanics, dispute resolution or governing law — we will:</p>
+      <ul>
+        <li>Email you at least 30 days before the change takes effect.</li>
+        <li>Post the change prominently on antyai.com.</li>
+        <li>Where the change is materially adverse to you, allow you to terminate the reservation and receive a full deposit refund within 30 days of notice, regardless of any other provision.</li>
+      </ul>
+      <p>Continued use of the service after a material change constitutes acceptance of the change. If you do not accept, exercise the refund right.</p>
+    </section>
+
+    <section id="general">
+      <span class="h-num">18</span>
+      <h2>General <em>provisions.</em></h2>
+      <ul>
+        <li><strong>Entire agreement.</strong> These terms (together with the Privacy Policy and DPDP Notice) constitute the entire agreement between you and Anty AI.</li>
+        <li><strong>Severability.</strong> If any provision is held unenforceable, the remainder continues in full force.</li>
+        <li><strong>No waiver.</strong> Failure to enforce any provision is not a waiver of the right to do so later.</li>
+        <li><strong>Assignment.</strong> You may not assign these terms without our written consent. We may assign on notice in connection with a corporate transaction.</li>
+        <li><strong>Force majeure.</strong> Neither party is liable for failure caused by events beyond reasonable control (acts of God, war, terrorism, pandemic, internet outage, government action).</li>
+        <li><strong>Notices.</strong> Notices to us must be sent to legal@antyai.com. Notices to you will be sent to the email on file.</li>
+        <li><strong>Language.</strong> The English version of these terms governs. Any translation provided for convenience does not override.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <span class="h-num">19</span>
+      <h2>Contact.</h2>
+      <div class="contact-block">
+        <span class="label">Legal Notices &amp; General Enquiries</span>
+        <p><strong>Email:</strong> <a href="mailto:legal@antyai.com">legal@antyai.com</a></p>
+      </div>
+      <div class="contact-block">
+        <span class="label">Refund Requests</span>
+        <p><strong>Email:</strong> <a href="mailto:refunds@antyai.com">refunds@antyai.com</a></p>
+        <p><strong>Response time:</strong> Acknowledged within 2 business days; processed within 7 business days.</p>
+      </div>
+      <div class="contact-block">
+        <span class="label">Postal Address</span>
+        <p><strong>Anty AI</strong></p>
+        <p>[Insert registered office address]</p>
+        <p>India</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ANTY AI · ANTYAI.COM · ALL RIGHTS RESERVED</span>
+    <span>
+      <a href="terms.html">Terms</a>
+      &nbsp;·&nbsp;
+      <a href="privacy.html">Privacy</a>
+      &nbsp;·&nbsp;
+      <a href="dpdp-notice.html">DPDP</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,25 +1,2752 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/images/icon-192.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AntyAI - Intelligent Solutions. Affordable web design, lead generation, and business automation for small businesses worldwide." />
-    <meta name="keywords" content="web design, small business website, lead generation, affordable website, ecommerce, AntyAI" />
-    <meta property="og:title" content="AntyAI — Intelligent Solutions" />
-    <meta property="og:description" content="Websites that convert customers. Professional web solutions for small businesses worldwide." />
-    <meta property="og:image" content="/images/banner-dark.jpg" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/images/banner-dark.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>AntyAI - Affordable Web Solutions for Small Businesses</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Anty AI — AI-powered identity protection for celebrities, public figures and high-value individuals. We detect unauthorized images, videos and audio of you across the internet and get them taken down. Built in India. Available worldwide." />
+<title>Anty AI — The shield for your likeness</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ANTY AI — Landing page (Light · Premium · India-first · Global)
+   Palette: cream paper, deep ink, warm gold, deep burgundy
+   ============================================================ */
+
+:root {
+  --cream:      #F8F4EC;
+  --cream-2:    #F2ECDD;
+  --paper:      #FDFAF3;
+  --paper-pure: #FFFFFF;
+
+  --ink:        #1A1814;
+  --ink-2:      #2D2A23;
+  --mute:       #6B6457;
+  --whisper:    #9C9586;
+
+  --gold:       #B8923D;
+  --gold-deep:  #8C6F2E;
+  --gold-light: #D4B66E;
+  --gold-soft:  #F0E5C8;
+  --gold-tint:  rgba(184, 146, 61, 0.08);
+
+  --burgundy:   #7A2E2E;
+  --olive:      #5C6B3D;
+
+  --line:       rgba(26, 24, 20, 0.10);
+  --line-soft:  rgba(26, 24, 20, 0.05);
+  --line-gold:  rgba(184, 146, 61, 0.25);
+
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --sans:    'Manrope', system-ui, -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+::selection { background: var(--gold); color: var(--paper-pure); }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+/* ─────────── Layout primitives ─────────── */
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 720px) { .wrap { padding: 0 22px; } }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  color: var(--ink);
+}
+
+p { font-weight: 400; }
+.lead {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 640px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAV
+   ═══════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248, 244, 236, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  display: flex; align-items: center; gap: 10px;
+  color: var(--ink);
+}
+.brand .dot { color: var(--gold); }
+.brand .ai {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-left: 6px;
+  position: relative;
+  top: -2px;
+}
+.nav-links {
+  display: flex; gap: 36px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.nav-links a:hover { color: var(--gold-deep); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--gold);
+  color: var(--gold-deep);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.nav-cta:hover { background: var(--gold); color: var(--paper-pure); }
+@media (max-width: 920px) {
+  .nav-links { display: none; }
+  nav { padding: 14px 22px; }
+  .brand { font-size: 22px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 160px 0 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--cream);
+}
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 70% at 60% 50%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 60% 50%, black 30%, transparent 80%);
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(184, 146, 61, 0.18), transparent 60%);
+  top: 50%; right: -10%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 56px; }
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  padding: 8px 14px;
+  background: var(--gold-tint);
+  border: 1px solid var(--line-gold);
+  border-radius: 999px;
+  margin-bottom: 32px;
+}
+.pulse-dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(184, 146, 61, 0.5); }
+  50% { opacity: 0.4; box-shadow: 0 0 0 8px rgba(184, 146, 61, 0); }
+}
+
+h1.hero-title {
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+h1.hero-title em {
+  font-style: italic;
+  color: var(--gold-deep);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin-bottom: 24px;
+  max-width: 560px;
+}
+.hero-sub strong {
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 2px solid var(--gold-light);
+  padding-bottom: 1px;
+}
+
+.hero-honest {
+  display: flex;
+  gap: 14px;
+  padding: 18px 22px;
+  background: var(--paper-pure);
+  border: 1px solid var(--line-gold);
+  border-left: 3px solid var(--gold);
+  margin-bottom: 36px;
+  max-width: 560px;
+  align-items: flex-start;
+}
+.hero-honest .ico {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--gold-deep);
+  font-style: italic;
+  flex-shrink: 0;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  line-height: 1;
+}
+.hero-honest p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.hero-honest strong { color: var(--ink); font-weight: 600; }
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+}
+.btn-primary:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--paper-pure);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: transparent;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-deep);
+}
+
+/* Hero visual side: scanning identity panel for light theme */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1.05;
+  max-width: 500px;
+  margin-left: auto;
+  width: 100%;
+}
+
+.identity-card {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--line-gold);
+  background: linear-gradient(135deg, var(--paper-pure) 0%, var(--paper) 100%);
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(26, 24, 20, 0.04),
+    0 24px 48px -16px rgba(184, 146, 61, 0.18);
+}
+
+.identity-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  z-index: 5;
+}
+
+.identity-card-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(184, 146, 61, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 146, 61, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.identity-meta {
+  position: absolute;
+  top: 24px; left: 24px; right: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+  z-index: 4;
+}
+.identity-meta .right { color: var(--gold-deep); }
+
+.identity-glyph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glyph-svg {
+  width: 70%;
+  height: 70%;
+  opacity: 0.95;
+}
+
+.identity-tags {
+  position: absolute;
+  bottom: 24px; left: 24px; right: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 4;
+}
+.identity-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border: 1px solid var(--line-gold);
+  background: var(--gold-tint);
+  color: var(--gold-deep);
+  border-radius: 2px;
+}
+
+.identity-radar {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 60%; height: 60%;
+  border: 1px solid var(--line-gold);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.identity-radar::before, .identity-radar::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px solid var(--line-gold);
+  border-radius: 50%;
+}
+.identity-radar::after { inset: 28%; }
+
+.radar-sweep {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 50%; height: 50%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(184, 146, 61, 0.35) 60deg, transparent 80deg);
+  transform-origin: top left;
+  border-radius: 50%;
+  animation: sweep 4s linear infinite;
+}
+@keyframes sweep { to { transform: rotate(360deg); } }
+
+.detection-dot {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: var(--burgundy);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--burgundy);
+  animation: blink 1.5s ease-in-out infinite;
+  z-index: 3;
+}
+.detection-dot.d1 { top: 38%; left: 62%; animation-delay: 0.2s; }
+.detection-dot.d2 { top: 65%; left: 41%; animation-delay: 0.8s; }
+.detection-dot.d3 { top: 28%; left: 35%; animation-delay: 1.4s; }
+@keyframes blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.7); }
+}
+
+.geo-bar {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.geo-bar strong {
+  color: var(--ink);
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   YES/NO BANNER  —  what we do, what we don't
+   ═══════════════════════════════════════════════════════════ */
+.yes-no {
+  background: var(--paper-pure);
+  border-bottom: 1px solid var(--line);
+  padding: 80px 0;
+  position: relative;
+}
+.yes-no-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.yes-no-header h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 16px 0 14px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.yes-no-header h2 em { font-style: italic; color: var(--gold-deep); }
+.yes-no-header p {
+  font-size: 16px;
+  color: var(--mute);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.yes-no-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 820px) { .yes-no-grid { grid-template-columns: 1fr; } }
+
+.yn-col {
+  border: 1px solid var(--line);
+  background: var(--cream);
+  padding: 36px;
+}
+.yn-col.yes { border-left: 3px solid var(--olive); }
+.yn-col.no  { border-left: 3px solid var(--gold); }
+
+.yn-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.yn-col.yes .yn-tag { color: var(--olive); }
+.yn-col.no  .yn-tag { color: var(--gold-deep); }
+
+.yn-tag .badge {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--paper-pure);
+}
+.yn-col.yes .badge { background: var(--olive); }
+.yn-col.no  .badge { background: var(--gold); }
+
+.yn-col h3 {
+  font-size: 26px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.yn-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.yn-col li {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.yn-col li:last-child { border-bottom: none; }
+.yn-col li .mark {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 500;
+  flex-shrink: 0;
+  width: 22px;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+.yn-col.yes li .mark { color: var(--olive); }
+.yn-col.no  li .mark { color: var(--gold-deep); }
+
+/* ═══════════════════════════════════════════════════════════
+   STATS MARQUEE
+   ═══════════════════════════════════════════════════════════ */
+.marquee-section {
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  padding: 22px 0;
+}
+.marquee {
+  display: flex;
+  gap: 64px;
+  white-space: nowrap;
+  animation: marquee 50s linear infinite;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(248, 244, 236, 0.7);
+}
+.marquee strong {
+  color: var(--gold-light);
+  font-weight: 500;
+  margin-right: 8px;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GENERIC SECTION
+   ═══════════════════════════════════════════════════════════ */
+section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+@media (max-width: 720px) { section { padding: 80px 0; } }
+
+.section-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  margin-bottom: 80px;
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .section-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 56px; }
+}
+
+.section-header h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.02;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.section-header h2 em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+.section-meta {
+  position: sticky;
+  top: 120px;
+}
+.section-num {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-deep);
+  letter-spacing: 0.04em;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.section-meta .label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   01 — THE CRISIS
+   ═══════════════════════════════════════════════════════════ */
+.crisis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 40px;
+}
+@media (max-width: 820px) { .crisis-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.crisis-stat {
+  background: var(--paper-pure);
+  padding: 36px 28px;
+  position: relative;
+}
+.crisis-stat .num {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 500;
+  color: var(--gold-deep);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+.crisis-stat .num small { font-size: 0.5em; color: var(--mute); margin-left: 4px; }
+.crisis-stat .label {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.crisis-stat .src {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--whisper);
+  margin-top: 14px;
+  display: block;
+}
+
+.crisis-quote {
+  margin-top: 64px;
+  padding: 48px;
+  border: 1px solid var(--line-gold);
+  background: linear-gradient(135deg, var(--paper-pure), var(--gold-tint));
+  position: relative;
+}
+.crisis-quote::before {
+  content: '"';
+  position: absolute;
+  top: 8px; left: 24px;
+  font-family: var(--display);
+  font-size: 100px;
+  color: var(--gold);
+  opacity: 0.25;
+  line-height: 1;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+.crisis-quote p {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.45;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  color: var(--ink);
+  position: relative;
+}
+.crisis-quote .attr {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-top: 24px;
+  display: block;
+}
+@media (max-width: 720px) { .crisis-quote { padding: 32px 24px; } }
+
+/* ═══════════════════════════════════════════════════════════
+   02 — HOW IT WORKS
+   ═══════════════════════════════════════════════════════════ */
+.how-section { background: var(--paper); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: var(--paper-pure);
+  border: 1px solid var(--line);
+}
+@media (max-width: 980px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .steps { grid-template-columns: 1fr; } }
+
+.step {
+  padding: 36px 32px;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+.step:last-child { border-right: none; }
+@media (max-width: 980px) {
+  .step:nth-child(2) { border-right: none; }
+  .step:nth-child(1), .step:nth-child(2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 580px) {
+  .step { border-right: none; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+}
+
+.step-num {
+  font-family: var(--display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gold-deep);
+  margin-bottom: 16px;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.step h3 {
+  font-size: 26px;
+  margin-bottom: 14px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.step h3 em { font-style: italic; color: var(--gold-deep); }
+.step p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* Anatomy of a takedown — timeline scenario */
+.anatomy {
+  margin-top: 64px;
+  padding: 48px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  position: relative;
+}
+@media (max-width: 720px) { .anatomy { padding: 32px 24px; } }
+
+.anatomy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+}
+.anatomy-header h3 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.anatomy-header h3 em { font-style: italic; color: var(--gold-deep); }
+.anatomy-header .stamp {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  border: 1px solid var(--line-gold);
+  padding: 6px 12px;
+  background: var(--gold-tint);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.tl-row {
+  display: grid;
+  grid-template-columns: 110px 24px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  align-items: flex-start;
+  position: relative;
+}
+@media (max-width: 580px) {
+  .tl-row { grid-template-columns: 80px 20px 1fr; gap: 12px; }
+}
+
+.tl-time {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold-deep);
+  padding-top: 1px;
+  line-height: 1.35;
+}
+.tl-marker {
+  position: relative;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+}
+.tl-marker::before {
+  content: '';
+  width: 11px; height: 11px;
+  border: 2px solid var(--gold);
+  background: var(--paper-pure);
+  border-radius: 50%;
+  margin-top: 4px;
+  z-index: 2;
+  position: relative;
+}
+.tl-marker::after {
+  content: '';
+  position: absolute;
+  top: 18px; bottom: -18px;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
+}
+.tl-row:last-child .tl-marker::after { display: none; }
+.tl-row.final .tl-marker::before { background: var(--gold); }
+
+.tl-event h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--ink);
+}
+.tl-event p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mute);
+}
+.tl-event .legal {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-top: 6px;
+  display: inline-block;
+  padding: 3px 8px;
+  background: var(--gold-tint);
+  border-radius: 2px;
+}
+
+.anatomy-foot {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--mute);
+  line-height: 1.55;
+  font-style: italic;
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.anatomy-foot strong { color: var(--ink); font-style: normal; font-family: var(--sans); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════════════════
+   03 — WHAT WE PROTECT
+   ═══════════════════════════════════════════════════════════ */
+.protect-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media (max-width: 720px) { .protect-grid { grid-template-columns: 1fr; } }
+
+.protect-card {
+  background: var(--paper-pure);
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: background 0.4s ease;
+}
+.protect-card:hover { background: var(--cream); }
+
+.protect-icon {
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-gold);
+  background: var(--gold-tint);
+  color: var(--gold-deep);
+}
+
+.protect-card h3 {
+  font-size: 28px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.protect-card h3 em { font-style: italic; color: var(--gold-deep); }
+.protect-card p { color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+.protect-card ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.protect-card li {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  color: var(--mute);
+  border-radius: 2px;
+  background: var(--cream);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   04 — COVERAGE
+   ═══════════════════════════════════════════════════════════ */
+.coverage-section { background: var(--paper); }
+
+.coverage-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+@media (max-width: 820px) { .coverage-wrap { grid-template-columns: 1fr; gap: 48px; } }
+
+.coverage-block h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.coverage-block .region {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 28px;
+  display: block;
+}
+.coverage-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.coverage-item {
+  background: var(--paper-pure);
+  padding: 18px 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ink);
+}
+.coverage-item .stat {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--olive);
+  font-weight: 500;
+}
+.coverage-item .stat.partial { color: var(--gold-deep); }
+
+.lang-bar {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: var(--gold-tint);
+  border: 1px solid var(--line-gold);
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.lang-bar strong { color: var(--gold-deep); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════════════════
+   05 — LEGAL FOUNDATION
+   ═══════════════════════════════════════════════════════════ */
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media (max-width: 920px) { .legal-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .legal-grid { grid-template-columns: 1fr; } }
+
+.legal-cell {
+  background: var(--paper-pure);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 240px;
+}
+.legal-cell .juris {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.legal-cell h4 {
+  font-size: 22px;
+  font-family: var(--display);
+  line-height: 1.2;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.legal-cell p {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.legal-cell .status {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--olive);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   06 — HONEST LIMITS
+   ═══════════════════════════════════════════════════════════ */
+.limits-section {
+  background: var(--cream-2);
+}
+
+.limits-intro {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.45;
+  color: var(--ink);
+  font-style: italic;
+  max-width: 800px;
+  margin-bottom: 56px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  border-left: 2px solid var(--gold);
+  padding-left: 28px;
+}
+
+.limits-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 720px) { .limits-list { grid-template-columns: 1fr; } }
+
+.limit-item {
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: var(--paper-pure);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.limit-x {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border: 1px solid var(--burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--burgundy);
+  font-size: 14px;
+  font-family: var(--mono);
+  font-weight: 500;
+}
+.limit-item h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.limit-item p { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+
+/* ═══════════════════════════════════════════════════════════
+   07 — PRICING
+   ═══════════════════════════════════════════════════════════ */
+.pricing-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  background: var(--paper-pure);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 48px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.pricing-toggle button {
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: var(--mute);
+  transition: all 0.3s ease;
+}
+.pricing-toggle button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media (max-width: 1100px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .tiers { grid-template-columns: 1fr; } }
+
+.tier {
+  background: var(--paper-pure);
+  padding: 36px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+.tier.featured {
+  background: linear-gradient(160deg, var(--paper-pure), var(--gold-tint));
+}
+.tier.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -1px; left: -1px;
+  background: var(--gold);
+  color: var(--paper-pure);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  padding: 6px 10px;
+}
+
+.tier-name {
+  font-family: var(--display);
+  font-size: 24px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.tier-price {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--gold-deep);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  line-height: 1.1;
+}
+.tier-price .period {
+  font-size: 13px;
+  color: var(--mute);
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+.tier-target {
+  font-size: 13px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 16px;
+  min-height: 48px;
+}
+.tier-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+  flex: 1;
+}
+.tier-features li {
+  display: flex; gap: 10px;
+  line-height: 1.45;
+}
+.tier-features li::before {
+  content: '✓';
+  color: var(--gold-deep);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   08 — WAITLIST + DEPOSIT
+   ═══════════════════════════════════════════════════════════ */
+.waitlist-section {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.waitlist-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(184, 146, 61, 0.18), transparent 60%);
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.waitlist-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.waitlist-wrap h2 {
+  font-size: clamp(40px, 5.2vw, 64px);
+  line-height: 1.02;
+  margin-bottom: 22px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.waitlist-wrap h2 em { font-style: italic; color: var(--gold-deep); }
+.waitlist-wrap > p {
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 56px;
+}
+
+.form-card {
+  background: var(--paper-pure);
+  border: 1px solid var(--line);
+  padding: 48px;
+  text-align: left;
+  box-shadow:
+    0 1px 3px rgba(26, 24, 20, 0.04),
+    0 24px 64px -16px rgba(184, 146, 61, 0.18);
+}
+@media (max-width: 720px) { .form-card { padding: 32px 24px; } }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 580px) { .form-row { grid-template-columns: 1fr; } }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.field label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+.field input,
+.field select {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  padding: 14px 16px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  border-radius: 0;
+  transition: border 0.3s ease, background 0.3s ease;
+  width: 100%;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: var(--paper-pure);
+}
+.field input::placeholder { color: var(--whisper); }
+
+.deposit-area {
+  margin: 28px 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+}
+.deposit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.deposit-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+.deposit-amount {
+  font-family: var(--display);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--gold-deep);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  line-height: 1;
+}
+.deposit-currency { font-size: 18px; color: var(--mute); margin-right: 4px; }
+
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+.preset {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  color: var(--mute);
+  background: var(--paper-pure);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.preset:hover { border-color: var(--gold); color: var(--gold-deep); }
+.preset.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--line);
+  border-radius: 2px;
+  outline: none;
+  margin: 14px 0;
+}
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; height: 18px;
+  background: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--paper-pure);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+input[type="range"].slider::-moz-range-thumb {
+  width: 18px; height: 18px;
+  background: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--paper-pure);
+}
+
+.deposit-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--whisper);
+}
+
+.deposit-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: var(--gold-tint);
+  border-left: 2px solid var(--gold);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.deposit-note strong { color: var(--gold-deep); font-weight: 600; }
+
+.submit-btn {
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+.submit-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.tos-line {
+  font-size: 11px;
+  color: var(--mute);
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.5;
+}
+.tos-line a { color: var(--ink-2); border-bottom: 1px solid var(--line-gold); }
+
+/* Success modal */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 24, 20, 0.55);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-backdrop.show { display: flex; }
+.modal {
+  max-width: 480px;
+  width: 100%;
+  background: var(--paper-pure);
+  border: 1px solid var(--gold);
+  padding: 48px 36px;
+  text-align: center;
+  box-shadow: 0 32px 64px rgba(26, 24, 20, 0.2);
+}
+.modal h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.modal h3 em { font-style: italic; color: var(--gold-deep); }
+.modal p {
+  color: var(--ink-2);
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+.modal .ref {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--gold-deep);
+  border: 1px solid var(--line-gold);
+  background: var(--gold-tint);
+  padding: 12px;
+  margin-bottom: 24px;
+  display: block;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   09 — FAQ
+   ═══════════════════════════════════════════════════════════ */
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-q {
+  width: 100%;
+  text-align: left;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--display);
+  font-size: clamp(19px, 2vw, 22px);
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  transition: color 0.3s ease;
+}
+.faq-q:hover { color: var(--gold-deep); }
+.faq-toggle {
+  font-family: var(--display);
+  font-size: 24px;
+  color: var(--gold-deep);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.faq-item.open .faq-a {
+  max-height: 600px;
+  padding-bottom: 28px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 80px 0 40px;
+  position: relative;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+@media (max-width: 820px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand-block { grid-column: 1 / -1; }
+}
+
+.footer-tag {
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 18px 0 24px;
+  max-width: 380px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  color: var(--paper);
+}
+.footer-tag em { font-style: italic; color: var(--gold-light); }
+
+.footer-col h5 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(248, 244, 236, 0.6);
+}
+.footer-col a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(248, 244, 236, 0.1);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(248, 244, 236, 0.45);
+}
+
+.footer-mark {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--display);
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+.footer-mark .dot { color: var(--gold-light); }
+.footer-mark .ai {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-left: 4px;
+  position: relative;
+  top: -3px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS — reveal on scroll
+   ═══════════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ NAV ═══ -->
+<nav>
+  <div class="brand">
+    <span>Anty</span><span class="ai">.ai</span>
+  </div>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#protect">Protection</a>
+    <a href="#legal">Legal</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#waitlist" class="nav-cta">Reserve Access</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════ HERO ═══ -->
+<header class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-status">
+        <span class="pulse-dot"></span>
+        Private Beta · Reserving Now · Launching 2026
+      </div>
+
+      <h1 class="hero-title">
+        Your face. Your voice.<br>
+        Your <em>terms.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Anty AI is the <strong>identity-protection platform</strong> for celebrities, public figures and high-value individuals worldwide. We continuously scan the internet for unauthorized use of your likeness — across every major platform, in 14 languages — and get the content taken down through the appropriate legal channels.
+      </p>
+
+      <div class="hero-honest">
+        <span class="ico">!</span>
+        <p><strong>What we do — clearly.</strong> We help you remove unauthorized images, videos and audio of you from platforms across the internet. We do not — and cannot — prevent someone from creating content of you, uploading it, or being held personally accountable for it. No service can. Our work begins the moment such content surfaces publicly: we find it, classify it, and get it removed.</p>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary">
+          Reserve early access
+          <span>→</span>
+        </a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+
+      <div class="geo-bar">
+        <span><strong>Always-on monitoring.</strong> 24 / 7 / 365</span>
+        <span><strong>14 languages.</strong> From Hindi to Spanish</span>
+        <span><strong>6 jurisdictions.</strong> Global legal coverage</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="identity-card">
+        <div class="identity-card-grid"></div>
+
+        <div class="identity-meta">
+          <span>ID · 0x4F2A · ENROLLED</span>
+          <span class="right">SCANNING</span>
+        </div>
+
+        <div class="identity-glyph">
+          <svg class="glyph-svg" viewBox="0 0 200 200" fill="none" stroke="#B8923D" stroke-width="0.6">
+            <circle cx="100" cy="100" r="70" opacity="0.18"/>
+            <circle cx="100" cy="100" r="55" opacity="0.30"/>
+            <circle cx="100" cy="100" r="40" opacity="0.50"/>
+
+            <g stroke="#8C6F2E" fill="#8C6F2E">
+              <circle cx="80" cy="78" r="1.4"/>
+              <circle cx="120" cy="78" r="1.4"/>
+              <circle cx="100" cy="95" r="1.4"/>
+              <circle cx="85" cy="115" r="1.4"/>
+              <circle cx="115" cy="115" r="1.4"/>
+              <circle cx="100" cy="125" r="1.4"/>
+              <circle cx="70" cy="100" r="1.4"/>
+              <circle cx="130" cy="100" r="1.4"/>
+              <circle cx="100" cy="60" r="1.4"/>
+              <circle cx="100" cy="140" r="1.4"/>
+            </g>
+
+            <g opacity="0.55">
+              <line x1="80" y1="78" x2="120" y2="78"/>
+              <line x1="80" y1="78" x2="100" y2="95"/>
+              <line x1="120" y1="78" x2="100" y2="95"/>
+              <line x1="100" y1="95" x2="85" y2="115"/>
+              <line x1="100" y1="95" x2="115" y2="115"/>
+              <line x1="85" y1="115" x2="100" y2="125"/>
+              <line x1="115" y1="115" x2="100" y2="125"/>
+              <line x1="80" y1="78" x2="70" y2="100"/>
+              <line x1="120" y1="78" x2="130" y2="100"/>
+              <line x1="70" y1="100" x2="85" y2="115"/>
+              <line x1="130" y1="100" x2="115" y2="115"/>
+              <line x1="100" y1="60" x2="80" y2="78"/>
+              <line x1="100" y1="60" x2="120" y2="78"/>
+              <line x1="100" y1="125" x2="100" y2="140"/>
+            </g>
+
+            <line x1="100" y1="20" x2="100" y2="40" stroke-width="0.4" opacity="0.6"/>
+            <line x1="100" y1="160" x2="100" y2="180" stroke-width="0.4" opacity="0.6"/>
+            <line x1="20" y1="100" x2="40" y2="100" stroke-width="0.4" opacity="0.6"/>
+            <line x1="160" y1="100" x2="180" y2="100" stroke-width="0.4" opacity="0.6"/>
+          </svg>
+        </div>
+
+        <div class="identity-radar">
+          <div class="radar-sweep"></div>
+        </div>
+
+        <span class="detection-dot d1"></span>
+        <span class="detection-dot d2"></span>
+        <span class="detection-dot d3"></span>
+
+        <div class="identity-tags">
+          <span class="identity-tag">FACE</span>
+          <span class="identity-tag">VOICE</span>
+          <span class="identity-tag">NAME</span>
+          <span class="identity-tag">GESTURE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════ TRANSPARENCY ═══ -->
+<section class="yes-no" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="yes-no-header reveal">
+      <div class="eyebrow" style="justify-content: center;">Transparency First</div>
+      <h2>Our <em>service</em> — and<br>what we'll always tell you <em>upfront.</em></h2>
+      <p>The deepfake economy is real and growing. So are the people promising magical, end-to-end protection. Anty AI will never be one of them. Here is exactly what your subscription delivers — and the realities every honest service in this space lives within.</p>
+    </div>
+
+    <div class="yes-no-grid reveal">
+      <div class="yn-col yes">
+        <div class="yn-tag">
+          <span class="badge">✓</span>
+          <span>What We Deliver</span>
+        </div>
+        <h3>The work we do for you.</h3>
+        <ul>
+          <li><span class="mark">→</span><span>Detect unauthorized images, videos and audio of you across the public internet, social platforms, image hosts and Telegram channels — typically within 30 minutes to 2 hours of upload on cooperative platforms.</span></li>
+          <li><span class="mark">→</span><span>File takedowns under DMCA, NO FAKES Act, TAKE IT DOWN Act, ELVIS Act, EU AI Act, India's IT Rules, DPDP Act and personality-rights case law — whichever applies to the content and the host.</span></li>
+          <li><span class="mark">→</span><span>Re-monitor indefinitely for re-uploads, mirrors, screen-recordings and re-encodes — the "whack-a-mole" problem solved as a service.</span></li>
+          <li><span class="mark">→</span><span>Coordinate directly with platforms, hosting providers, registrars and payment processors for stubborn cases that don't move on automated channels.</span></li>
+          <li><span class="mark">→</span><span>Provide an evidence package — detected content, timestamps, source URLs, biometric match data — that your legal counsel can use if you choose to pursue civil or criminal action.</span></li>
+        </ul>
+      </div>
+      <div class="yn-col no">
+        <div class="yn-tag">
+          <span class="badge">!</span>
+          <span>What We're Upfront About</span>
+        </div>
+        <h3>The realities we live within.</h3>
+        <ul>
+          <li><span class="mark">→</span><span><strong>Generation cannot be prevented.</strong> Open-source models exist; anyone can run them locally. Our value is in fast removal once content surfaces publicly — not in stopping creation.</span></li>
+          <li><span class="mark">→</span><span><strong>We pursue takedowns, not uploaders.</strong> We get content removed from platforms. We do not, and cannot, identify anonymous uploaders, prosecute them, or guarantee they won't post again. That work belongs to your lawyers and law enforcement.</span></li>
+          <li><span class="mark">→</span><span><strong>Removal success has natural limits.</strong> Industry leaders achieve 94–98% on cooperative platforms. End-to-end encrypted channels and certain offshore hosts remain partially out of reach. We work toward the same numbers honestly.</span></li>
+          <li><span class="mark">→</span><span><strong>Protected speech stays protected.</strong> Parody, satire, news commentary and political speech are honored under both Indian and US law. We do not file takedowns against them.</span></li>
+          <li><span class="mark">→</span><span><strong>Every action is auditable.</strong> Counter-notices are honored. Our classification logic is public. We publish a transparency report. The alternative — a black-box censorship engine — is something we refuse to operate.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ MARQUEE ═══ -->
+<div class="marquee-section">
+  <div class="marquee">
+    <span><strong>2,031</strong>verified deepfake incidents · Q3 2025</span>
+    <span><strong>$1.1B</strong>US fraud loss · 2025 · 3× year-over-year</span>
+    <span><strong>48%</strong>of US deepfake incidents use celebrity likeness</span>
+    <span><strong>3 sec</strong>of audio is now sufficient to clone a voice</span>
+    <span><strong>+680%</strong>year-over-year growth in voice deepfakes</span>
+    <span><strong>$401M</strong>lost to fake celebrity endorsements alone</span>
+    <span><strong>2,031</strong>verified deepfake incidents · Q3 2025</span>
+    <span><strong>$1.1B</strong>US fraud loss · 2025 · 3× year-over-year</span>
+    <span><strong>48%</strong>of US deepfake incidents use celebrity likeness</span>
+    <span><strong>3 sec</strong>of audio is now sufficient to clone a voice</span>
+    <span><strong>+680%</strong>year-over-year growth in voice deepfakes</span>
+    <span><strong>$401M</strong>lost to fake celebrity endorsements alone</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ 01 CRISIS ═══ -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">01 / 08</span>
+        <span class="label">The Crisis</span>
+      </div>
+      <h2>The cost to fake you<br>has fallen to <em>one dollar.</em></h2>
+    </div>
+
+    <div class="reveal" style="max-width: 760px; margin-bottom: 48px;">
+      <p class="lead">
+        In 2017, deepfakes were a research curiosity. By 2025 they are an industrialized criminal economy. Three things collapsed at once: the cost to produce a convincing forgery fell from thousands of dollars to about one. The skill needed dropped from machine-learning engineer to anyone with a smartphone. And the source material required shrank from hours of footage to a single photograph and three seconds of audio. From a Taylor Swift deepfake reaching 47 million views before takedown, to a $25M wire fraud authorized by a cloned CFO voice in Hong Kong, to landmark personality-rights orders in India for the Bachchan family, Asha Bhosle and Sunil Shetty — every month, the list grows longer.
+      </p>
+    </div>
+
+    <div class="crisis-grid reveal">
+      <div class="crisis-stat">
+        <div class="num">2,031</div>
+        <div class="label">Verified deepfake incidents in Q3 2025 alone — the highest monthly total ever recorded.</div>
+        <span class="src">Resemble AI Q3 2025</span>
+      </div>
+      <div class="crisis-stat">
+        <div class="num">$1.1B</div>
+        <div class="label">In US deepfake fraud losses in 2025 — three times the 2024 total of $359M.</div>
+        <span class="src">Surfshark Research</span>
+      </div>
+      <div class="crisis-stat">
+        <div class="num">48<small>%</small></div>
+        <div class="label">Of all US deepfake incidents in 2025 used a celebrity's face, voice or name.</div>
+        <span class="src">Keepnet Labs 2026</span>
+      </div>
+      <div class="crisis-stat">
+        <div class="num">+680<small>%</small></div>
+        <div class="label">Year-over-year growth in voice-deepfake incidents. Three seconds of audio yields an 85% match.</div>
+        <span class="src">SQ Magazine 2026</span>
+      </div>
+    </div>
+
+    <div class="crisis-quote reveal">
+      <p>A single AI-generated explicit image of a major recording artist reached 47 million views before takedown. By the time the platform responded, the damage to her name and brand had already compounded across mirrored sites, Telegram channels and re-encoded re-uploads. This is the world your clients now operate in.</p>
+      <span class="attr">— Excerpt · Internal Briefing · Anty AI Strategy Memo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 02 HOW IT WORKS ═══ -->
+<section class="how-section" id="how">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">02 / 08</span>
+        <span class="label">How It Works</span>
+      </div>
+      <h2>An <em>internet-immune</em><br>system for your identity.</h2>
+    </div>
+
+    <p class="lead reveal" style="margin-bottom: 56px;">
+      Anty AI runs a continuous four-stage loop — Detect, Notify, Take Down, Re-monitor — across every major platform where your likeness might appear. Below the four steps, we walk you through exactly what happens in the first 60 minutes after a fake video of you is uploaded to the internet.
+    </p>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">— Step 01.</div>
+        <h3><em>Enroll.</em></h3>
+        <p>You submit a short live-recorded video and audio sample, plus optional archival material. We generate a multi-modal biometric template — facial geometry, vocal spectrum, gesture and signature markers — encrypted at rest, never sold, never shared.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">— Step 02.</div>
+        <h3><em>Detect.</em></h3>
+        <p>Tens of thousands of crawlers scan the public internet, social platforms, video hosts, image boards, Telegram channels and dark-web mirrors continuously. Average detection latency on cooperative platforms: 60 minutes from upload.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">— Step 03.</div>
+        <h3><em>Take down.</em></h3>
+        <p>Each match is classified by intent — commercial fraud, NCII, deceptive impersonation, fan content, satire — and routed to the appropriate legal vehicle: DMCA, TAKE IT DOWN, NO FAKES, ELVIS, EU AI Act, India personality-rights orders, DPDP Act, platform ToS.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">— Step 04.</div>
+        <h3><em>Re-monitor.</em></h3>
+        <p>Re-uploads are inevitable. We never stop scanning. The Watchtower dashboard gives your team — agent, manager, lawyer — real-time visibility into every detection, takedown and re-emergence, indefinitely.</p>
+      </div>
+    </div>
+
+    <!-- Anatomy of a takedown -->
+    <div class="anatomy reveal">
+      <div class="anatomy-header">
+        <h3>Anatomy of a <em>takedown.</em></h3>
+        <span class="stamp">TYPICAL SCENARIO · ON COOPERATIVE PLATFORMS</span>
+      </div>
+      <p style="font-size: 15px; color: var(--mute); margin-bottom: 32px; line-height: 1.6;">
+        A fake endorsement video using your face and voice is uploaded to Instagram by an anonymous account, promoting a fraudulent cryptocurrency scheme. Here is what typically happens — with honest time ranges, not optimistic best-case minutes:
+      </p>
+
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-time">Stage 01</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Upload occurs.</h4>
+            <p>An anonymous account on Instagram posts a 23-second video using your face and voice, claiming you endorse a crypto giveaway. The post is public.</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">+ 30 min<br>– 2 hr</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Detection.</h4>
+            <p>Our crawler indexes the post on its next sweep. The biometric matcher compares against your enrolled template and returns a face and voice match above the confidence threshold. Your case officer is alerted. <em>Detection latency depends on platform indexing — fastest on YouTube and Meta via API integrations, slower on Telegram and dark-web mirrors.</em></p>
+            <span class="legal">FACE + VOICE BIOMETRIC MATCH</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">+ minutes</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Classification.</h4>
+            <p>The match is auto-classified by intent — commercial fraud, NCII, deceptive impersonation, fan content, satire. Ambiguous cases route to a human review queue. Action authorized only after classification.</p>
+            <span class="legal">CLASS · COMMERCIAL FRAUD</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">+ within<br>1 hour</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Takedowns filed — multiple vehicles in parallel.</h4>
+            <p>A DMCA notice goes to Meta's automated channel. A simultaneous notice cites IT Rules 2021 intermediary-liability obligations and DPDP Act biometric-data violation. A third reserves the right to file a personality-rights petition in court if the platform doesn't act.</p>
+            <span class="legal">DMCA · IT RULES · DPDP ACT</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">+ 24 hr<br>– 72 hr</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Removal — typical window on cooperative platforms.</h4>
+            <p>Meta processes the takedown. The post is removed. The posting account is flagged for repeated-offender review. You receive a confirmation in your dashboard. <em>NCII removal under the TAKE IT DOWN Act is mandated within 48 hours by US federal law. Commercial-fraud removals on cooperative platforms typically resolve in 24–72 hours. Telegram, offshore hosts and the dark web take longer — sometimes weeks.</em></p>
+            <span class="legal">REMOVED · CONFIRMED</span>
+          </div>
+        </div>
+        <div class="tl-row final">
+          <div class="tl-time">Forever</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Re-monitoring continues.</h4>
+            <p>Our scanners now watch for the same content fingerprint across YouTube, X, Telegram, Reddit, regional platforms and dark-web mirrors. Any re-upload triggers an automated re-takedown — without you lifting a finger. As long as your subscription is active.</p>
+            <span class="legal">CONTINUOUS · INDEFINITE</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="anatomy-foot">
+        <strong>The honest part.</strong> &nbsp; This is a typical scenario for a clear policy violation on a cooperative platform with API integration. Real-world timing varies widely. Detection can be near-instant on integrated platforms or take days on Telegram. Removal can take 48 hours under TAKE IT DOWN Act NCII rules, or weeks if a court order is required. A 5% residual is the industry baseline no service beats. We'll always tell you when something is hard. We won't pretend it isn't.
+      </p>
+    </div>
+
+    <!-- Your journey with Anty AI -->
+    <div class="anatomy reveal" style="margin-top: 32px;">
+      <div class="anatomy-header">
+        <h3>What it looks like for you, <em>from day one.</em></h3>
+        <span class="stamp">YOUR JOURNEY</span>
+      </div>
+      <p style="font-size: 15px; color: var(--mute); margin-bottom: 32px; line-height: 1.6;">
+        From the moment you reserve your place to the moment we go live and beyond, here's exactly what you can expect. No surprises. No fine print revealed later.
+      </p>
+
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-time">Today</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>You reserve your place.</h4>
+            <p>You submit the form below with a refundable interest deposit, held in regulated escrow. You receive a confirmation email and a reference number. No biometric data is collected at this stage.</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">Launch<br>(2026)</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>We invite you to onboard.</h4>
+            <p>You receive a private onboarding link. Your deposit is automatically credited toward your first subscription year of the tier you choose. You verify identity with government-issued ID and authorize the relationship — for celebrities, this is typically done through your manager or legal counsel under NDA.</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">Week 1</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Enrollment and initial sweep.</h4>
+            <p>You provide a short live-recorded video and audio sample (and optional archival material) under our security protocols. Within 48 hours we generate your encrypted biometric template. Within 7 days, our crawlers complete an initial sweep of the public internet for content that already exists about you. You see your first dashboard.</p>
+            <span class="legal">ENROLLMENT · INITIAL SWEEP</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">Ongoing</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Continuous protection, on autopilot.</h4>
+            <p>Our crawlers monitor cooperative platforms continuously. New detections appear in your dashboard with confidence scores, source URLs, classification and recommended action. For most categories — clear NCII, commercial fraud, fake endorsements — takedowns are automatic. For ambiguous cases, you (or your team) review and authorize.</p>
+            <span class="legal">DASHBOARD · NOTIFICATIONS · AUTO-TAKEDOWN</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">When<br>needed</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Escalation and legal support.</h4>
+            <p>If a platform refuses to act, or content is hosted offshore, or you want to pursue the uploader through criminal or civil channels, we hand off to your legal counsel with a complete evidence package. We are not law enforcement and we do not represent clients in court — we provide the documentation that makes your lawyers' job materially easier.</p>
+            <span class="legal">EVIDENCE PACKAGE · COURT-READY</span>
+          </div>
+        </div>
+        <div class="tl-row final">
+          <div class="tl-time">Always</div>
+          <div class="tl-marker"></div>
+          <div class="tl-event">
+            <h4>Your data stays yours.</h4>
+            <p>Your biometric template is never sold, licensed, shared with advertisers, or used to train models that benefit anyone other than you. You can request full deletion at any time — within 30 days every trace is wiped from our systems and our backups (subject to legal retention requirements). This is contractual, not aspirational.</p>
+            <span class="legal">DATA SOVEREIGNTY · DPDP / GDPR COMPLIANT</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="anatomy-foot">
+        <strong>What we ask of you.</strong> &nbsp; Provide accurate enrollment data. Be reachable for ambiguous-case decisions (or designate a representative who is). Renew your subscription if you want continuous protection — when it lapses, we stop scanning. That's it. The rest is on us.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 03 WHAT WE PROTECT ═══ -->
+<section id="protect">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">03 / 08</span>
+        <span class="label">What We Protect</span>
+      </div>
+      <h2>Four <em>biometric</em> dimensions.<br>One identity fingerprint.</h2>
+    </div>
+
+    <div class="protect-grid reveal">
+      <div class="protect-card">
+        <div class="protect-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9"/><path d="M8 9 v.01 M16 9 v.01 M8 15 q4 3 8 0"/>
+          </svg>
+        </div>
+        <h3>Your <em>face.</em></h3>
+        <p>Multi-angle facial geometry, micro-expression patterns, and identity-consistency markers — robust against partial obscuring, low-resolution forgeries and stylistic transfer. Every enrolled face strengthens the model.</p>
+        <ul>
+          <li>Photorealistic</li><li>Cartoon / Stylized</li><li>Body-swap</li><li>Resurrection</li>
+        </ul>
+      </div>
+      <div class="protect-card">
+        <div class="protect-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 12 h2 M19 12 h2 M7 8 v8 M11 5 v14 M15 7 v10 M9 10 v4 M13 9 v6 M17 11 v2"/>
+          </svg>
+        </div>
+        <h3>Your <em>voice.</em></h3>
+        <p>Vocal spectrum, prosody, accent and breath signatures — detected even in cloned voices, dubs and AI-generated phone calls. Native support for Hindi, Tamil, Telugu, Bengali, Marathi and six other Indian languages.</p>
+        <ul>
+          <li>Voice clones</li><li>Robocalls</li><li>Fake interviews</li><li>Song generation</li>
+        </ul>
+      </div>
+      <div class="protect-card">
+        <div class="protect-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 6 h14 M5 12 h14 M5 18 h10"/>
+          </svg>
+        </div>
+        <h3>Your <em>name.</em></h3>
+        <p>Impersonator accounts, fabricated quotes, fake endorsements, unauthorized merchandise listings, fraudulent crypto promos — text-and-context detection across every major platform and marketplace, including Indian-language content.</p>
+        <ul>
+          <li>Fake handles</li><li>Sham endorsements</li><li>Fabricated quotes</li><li>Counterfeit goods</li>
+        </ul>
+      </div>
+      <div class="protect-card">
+        <div class="protect-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 18 L8 12 L12 16 L16 8 L20 12"/>
+          </svg>
+        </div>
+        <h3>Your <em>signature.</em></h3>
+        <p>Catchphrases, signature gestures, on-screen mannerisms, autograph patterns — the non-biometric markers that make you recognizable even when face and voice are obscured.</p>
+        <ul>
+          <li>Catchphrases</li><li>Mannerisms</li><li>Walk / Gait</li><li>Wardrobe codes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 04 COVERAGE ═══ -->
+<section class="coverage-section" id="coverage">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">04 / 08</span>
+        <span class="label">Coverage</span>
+      </div>
+      <h2>Coverage that goes <em>wherever</em><br>you're seen.</h2>
+    </div>
+
+    <p class="lead reveal" style="margin-bottom: 48px;">
+      Anty AI runs on a single global infrastructure that monitors every major platform — and goes deeper than most into surfaces other services miss. A Hollywood star, a K-pop artist, a Bollywood actor, a Premier League footballer or a US podcaster all get the same end-to-end protection. The dashboard is the same. The legal engine is the same. Only the languages and platforms you care about change with your tier.
+    </p>
+
+    <div class="coverage-wrap reveal">
+      <div class="coverage-block">
+        <h3>Global platforms</h3>
+        <span class="region">Direct API integrations · Platform legal partnerships</span>
+        <div class="coverage-list">
+          <div class="coverage-item">YouTube <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Instagram / Meta <span class="stat">LIVE</span></div>
+          <div class="coverage-item">TikTok <span class="stat">LIVE</span></div>
+          <div class="coverage-item">X / Twitter <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Reddit <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Telegram <span class="stat partial">PARTIAL</span></div>
+          <div class="coverage-item">Discord <span class="stat partial">PARTIAL</span></div>
+          <div class="coverage-item">Image hosts <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Adult sites <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Dark-web mirrors <span class="stat partial">MANUAL</span></div>
+        </div>
+      </div>
+
+      <div class="coverage-block">
+        <h3>Regional depth</h3>
+        <span class="region">Where most US-built services don't reach</span>
+        <div class="coverage-list">
+          <div class="coverage-item">JioHotstar <span class="stat">LIVE</span></div>
+          <div class="coverage-item">JioSaavn <span class="stat">LIVE</span></div>
+          <div class="coverage-item">ShareChat <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Moj <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Josh <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Hungama <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Sony LIV <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Zee5 <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Koo <span class="stat">LIVE</span></div>
+          <div class="coverage-item">Roposo <span class="stat">LIVE</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-bar reveal">
+      <strong>Language coverage. </strong>
+      English, Spanish, Arabic, Korean, Mandarin and the major South Asian languages — Hindi, Tamil, Telugu, Bengali, Marathi, Punjabi, Malayalam, Kannada and Urdu — for both voice biometrics and name/text detection. Most US-built competitors handle English well and everything else as an afterthought. We built the multilingual engine first.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 05 LEGAL ═══ -->
+<section id="legal">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">05 / 08</span>
+        <span class="label">Legal Foundation</span>
+      </div>
+      <h2>Every takedown<br>backed by <em>law.</em></h2>
+    </div>
+
+    <p class="lead reveal" style="margin-bottom: 48px;">
+      We don't beg platforms. We exercise rights. Anty AI operates a multi-jurisdiction legal engine that selects the correct statute, treaty or court order for every detected match — and routes the request through the channel platforms are legally obliged to act on.
+    </p>
+
+    <div class="legal-grid reveal">
+      <div class="legal-cell">
+        <span class="juris">India · Personality Rights</span>
+        <h4>Bachchan, Bhosle, Shetty &amp; the new doctrine</h4>
+        <p>Delhi and Bombay High Courts have issued binding takedown orders in 2025 covering the Bachchan family, Asha Bhosle, Karan Johar, Sunil Shetty, Akkineni Nagarjuna and Sri Sri Ravi Shankar — including John Doe orders binding Google, Amazon and Flipkart.</p>
+        <span class="status">● ACTIVE CASE LAW</span>
+      </div>
+      <div class="legal-cell">
+        <span class="juris">India · Statute</span>
+        <h4>DPDP Act 2023 + IT Rules 2021</h4>
+        <p>The Digital Personal Data Protection Act classifies biometric data as sensitive personal data. The IT Rules require expedited intermediary takedown. Together they create an enforceable right against unauthorized AI processing of likeness.</p>
+        <span class="status">● IN FORCE</span>
+      </div>
+      <div class="legal-cell">
+        <span class="juris">United States · Federal</span>
+        <h4>TAKE IT DOWN Act</h4>
+        <p>Signed into law in 2025. Mandates removal of non-consensual intimate imagery — including AI-generated NCII — within 48 hours of notice. Platforms have until 2026 to implement compliant notice-and-takedown systems.</p>
+        <span class="status">● IN FORCE · 2025</span>
+      </div>
+      <div class="legal-cell">
+        <span class="juris">United States · Federal</span>
+        <h4>NO FAKES Act</h4>
+        <p>Reintroduced April 2025 (HR 2794). Federal right of publicity for digital replicas. Backed by SAG-AFTRA, RIAA, Disney, Google, OpenAI, YouTube, Adobe and IBM. Modeled on the DMCA notice-and-takedown regime.</p>
+        <span class="status">● IN COMMITTEE</span>
+      </div>
+      <div class="legal-cell">
+        <span class="juris">United States · Tennessee</span>
+        <h4>ELVIS Act</h4>
+        <p>In force since July 2024. The first US state statute explicitly protecting voice and likeness from AI cloning — and barring distribution of software whose primary purpose is unauthorized replica generation.</p>
+        <span class="status">● IN FORCE · JUL 2024</span>
+      </div>
+      <div class="legal-cell">
+        <span class="juris">European Union</span>
+        <h4>EU AI Act · Article 50</h4>
+        <p>Enforced August 2026. Requires AI-generated content to be marked machine-readable. Penalties up to €15M or 3% of global turnover. Drives industry-wide adoption of C2PA-style provenance signatures — which Anty AI issues natively.</p>
+        <span class="status">● ENFORCED · AUG 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 06 HONEST LIMITS ═══ -->
+<section class="limits-section" id="limits">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">06 / 08</span>
+        <span class="label">What We Cannot Do</span>
+      </div>
+      <h2>An <em>honest</em> contract<br>with our clients.</h2>
+    </div>
+
+    <p class="limits-intro reveal">
+      We will say it as many times as it takes. No platform that promises to "stop deepfakes from being made" is telling you the truth. Anty AI is damage limitation at industrial scale — not a magic shield. Here, in plain language, is what we cannot do for you.
+    </p>
+
+    <div class="limits-list reveal">
+      <div class="limit-item">
+        <div class="limit-x">×</div>
+        <div>
+          <h4>We cannot prevent generation.</h4>
+          <p>Open-source models — Stable Diffusion, voice-cloning kits, open Sora-likes — cannot be unbuilt. A motivated bad actor can generate content locally with no platform to police. Our work begins after creation.</p>
+        </div>
+      </div>
+      <div class="limit-item">
+        <div class="limit-x">×</div>
+        <div>
+          <h4>We cannot guarantee 100% takedown.</h4>
+          <p>Industry-leading platforms cap at 94 to 98 percent. End-to-end encrypted channels, certain offshore hosts and the dark web remain partially out of reach. A 5% residual is the honest baseline.</p>
+        </div>
+      </div>
+      <div class="limit-item">
+        <div class="limit-x">×</div>
+        <div>
+          <h4>We will not remove protected speech.</h4>
+          <p>Parody, satire, news commentary and political speech are protected — both US and Indian courts agree. The Arjun Kapoor case (Delhi HC, April 2025) is binding precedent. We classify conservatively and we publish our criteria.</p>
+        </div>
+      </div>
+      <div class="limit-item">
+        <div class="limit-x">×</div>
+        <div>
+          <h4>Detection lags generation by 6–12 months.</h4>
+          <p>Each new generative model — Sora, Kling, Veo, Seedance and the next ten after them — requires retraining the detector. We close that gap continuously. We do not claim to have closed it permanently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 07 PRICING ═══ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">07 / 08</span>
+        <span class="label">Pricing</span>
+      </div>
+      <h2>From <em>creators</em><br>to <em>A-list</em> rosters.</h2>
+    </div>
+
+    <div class="reveal" style="margin-bottom: 48px;">
+      <p class="lead">Five tiers. Refundable interest deposits available now to lock in launch pricing — credited in full toward your first subscription year.</p>
+      <div class="pricing-toggle" style="margin-top: 32px;">
+        <button class="active" data-curr="inr">INR</button>
+        <button data-curr="usd">USD</button>
+      </div>
+    </div>
+
+    <div class="tiers reveal">
+      <div class="tier">
+        <div class="tier-name">Free</div>
+        <div class="tier-price" data-inr="₹0" data-usd="$0">₹0<span class="period"> /year</span></div>
+        <div class="tier-target">For awareness — a single scan, weekly digest, manual takedowns.</div>
+        <ul class="tier-features">
+          <li>1 face/voice scan</li>
+          <li>Weekly monitoring digest</li>
+          <li>Manual takedown requests</li>
+          <li>Email support</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Individual</div>
+        <div class="tier-price" data-inr="₹2,400" data-usd="$30">₹2,400<span class="period"> /year</span></div>
+        <div class="tier-target">For executives, professionals, public-facing private citizens.</div>
+        <ul class="tier-features">
+          <li>Continuous monitoring</li>
+          <li>Automated DMCA</li>
+          <li>Watchtower dashboard</li>
+          <li>Priority email support</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-name">Creator</div>
+        <div class="tier-price" data-inr="₹50,000" data-usd="$600">₹50,000<span class="period"> /year</span></div>
+        <div class="tier-target">For 100K–1M follower creators, regional artists, athletes.</div>
+        <ul class="tier-features">
+          <li>Everything in Individual</li>
+          <li>Telegram + dark-web monitoring</li>
+          <li>Impersonator-account takedowns</li>
+          <li>Multi-language coverage</li>
+          <li>Dedicated case officer</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Celebrity</div>
+        <div class="tier-price" data-inr="₹5,00,000+" data-usd="$6,000+">₹5,00,000+<span class="period"> /year</span></div>
+        <div class="tier-target">For A-list stars, top athletes, public figures, religious leaders.</div>
+        <ul class="tier-features">
+          <li>White-glove case management</li>
+          <li>Direct legal coordination</li>
+          <li>Crisis &amp; press response</li>
+          <li>24/7 priority hotline</li>
+          <li>NDA-grade confidentiality</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-price" data-inr="₹1 Cr+" data-usd="$120K+">₹1 Cr+<span class="period"> /year</span></div>
+        <div class="tier-target">For talent agencies, studios, sports leagues, OTT platforms.</div>
+        <ul class="tier-features">
+          <li>Bulk roster coverage</li>
+          <li>Full API access</li>
+          <li>Custom legal-team integration</li>
+          <li>Executive reporting</li>
+          <li>White-label option</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 08 WAITLIST ═══ -->
+<section class="waitlist-section" id="waitlist">
+  <div class="wrap">
+    <div class="waitlist-wrap reveal">
+      <div class="eyebrow" style="margin-bottom: 24px; justify-content: center;">Reserve · Launch · 2026</div>
+      <h2>Reserve your <em>place.</em><br>Lock in launch <em>pricing.</em></h2>
+      <p>Secure early access with a fully refundable interest deposit. Credited in full toward your first subscription when Anty AI launches in 2026. Held in regulated escrow. Refundable on request.</p>
+
+      <div class="form-card">
+        <form id="waitlist-form" novalidate>
+          <div class="form-row">
+            <div class="field" style="margin-bottom: 0;">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Your name or representative" required>
+            </div>
+            <div class="field" style="margin-bottom: 0;">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@domain.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field" style="margin-bottom: 0;">
+              <label for="role">I am a</label>
+              <select id="role" name="role" required>
+                <option value="">Select category</option>
+                <option>Individual / Private citizen</option>
+                <option>Creator / Influencer</option>
+                <option>Celebrity / Public figure</option>
+                <option>Talent agent / Manager</option>
+                <option>Legal counsel</option>
+                <option>Studio / Agency / Enterprise</option>
+              </select>
+            </div>
+            <div class="field" style="margin-bottom: 0;">
+              <label for="region">Primary region</label>
+              <select id="region" name="region" required>
+                <option value="">Select region</option>
+                <option>India</option>
+                <option>South Asia (excl. India)</option>
+                <option>Southeast Asia</option>
+                <option>Middle East · GCC</option>
+                <option>United States · Canada</option>
+                <option>Europe · UK</option>
+                <option>Latin America</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="deposit-area">
+            <div class="deposit-header">
+              <span class="deposit-label">Interest deposit · refundable</span>
+              <div class="deposit-amount">
+                <span class="deposit-currency">₹</span><span id="deposit-display">2,000</span>
+              </div>
+            </div>
+
+            <div class="preset-buttons">
+              <button type="button" class="preset" data-amount="500">₹500</button>
+              <button type="button" class="preset active" data-amount="2000">₹2,000</button>
+              <button type="button" class="preset" data-amount="10000">₹10,000</button>
+              <button type="button" class="preset" data-amount="50000">₹50,000</button>
+            </div>
+
+            <input type="range" id="deposit-slider" class="slider" min="500" max="100000" step="500" value="2000">
+
+            <div class="deposit-meta">
+              <span>MIN ₹500</span>
+              <span>MAX ₹1,00,000</span>
+            </div>
+
+            <div class="deposit-note">
+              <strong>What this means.</strong> Your deposit is held in regulated escrow and is fully refundable on written request. At launch, the full amount is credited toward your first subscription year. This is an interest reservation — not a security, not an investment, and not a guarantee of any future return.
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Reserve my place →
+          </button>
+
+          <p class="tos-line">
+            By reserving, you confirm you have read and agree to the <a href="terms.html">Reservation Terms</a>, <a href="privacy.html">Privacy Policy</a> and <a href="dpdp-notice.html">DPDP / GDPR Notice</a>. Anty AI does not sell or share biometric data, ever.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ 09 FAQ ═══ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-meta">
+        <span class="section-num">FAQ</span>
+        <span class="label">Frequently Asked</span>
+      </div>
+      <h2>Questions<br><em>worth asking.</em></h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Can Anty AI actually stop someone from making a deepfake of me?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>No — and we will never claim that. Open-source generation tools cannot be unbuilt and bad actors can produce content locally without ever touching a platform. What Anty AI does is detect unauthorized images, videos and audio of you the moment they surface publicly, and remove 90 to 95 percent of them within 24 hours through legal takedowns. We are damage limitation at industrial scale, not a magic shield. We say this in writing because every honest player in this category does.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>How is my biometric data stored and protected?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Biometric templates are encrypted at rest using bank-grade AES-256 and in transit using TLS 1.3. They are stored in geographically separated, access-controlled vaults inside India. We are pursuing SOC 2 Type II and ISO 27001 certification ahead of public launch. We do not sell, license or share your biometric data with any third party — not advertisers, not partners, not affiliates. This is a contractual commitment, not a marketing line.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>What is the refund policy on the interest deposit?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Your deposit is held in regulated escrow with a partner financial institution. You may request a full refund at any time before launch — we process refunds within seven business days, no questions asked. At launch, the full deposit amount is credited toward your first subscription year of the tier you choose. The deposit is not a security or an investment and offers no return; it is an interest reservation that locks in launch pricing for you.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Can you identify or take action against the person who uploads fake content of me?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>No. Anty AI is a content-takedown service, not law enforcement and not a private investigation firm. We focus on getting unauthorized content removed from platforms — that is the work we are good at. Many uploaders are anonymous, in offshore jurisdictions, or untraceable without subpoena power that only courts and police have. If you wish to pursue a specific uploader through civil or criminal channels, we work alongside your legal counsel: we provide a complete evidence package — the detected content, timestamps, source URLs, biometric match data and platform correspondence — that materially helps your lawyers, but we do not investigate, prosecute, or guarantee that any particular uploader will be held accountable.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Where do you operate, and is the service the same everywhere?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Anty AI is a global service. The same crawlers, the same dashboard, the same legal engine and the same case-officer model apply whether you are in Mumbai, Manchester, Manhattan or Manila. What changes by tier is depth — the Celebrity tier includes white-glove case management, 24/7 hotlines and crisis response; the Individual tier is automated monitoring with email support. We have unusual depth in Indian platforms, Indian languages and Indian personality-rights jurisprudence — that's a competitive advantage we built deliberately, because most US and EU services treat these as afterthoughts. But the platform itself is built to serve clients worldwide, and most of our roadmap focuses on broadening regional depth across Southeast Asia, MENA, Latin America and East Asia.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>What happens to legitimate fan content, parody and news?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Nothing. We classify every detection by intent before any action is taken. Parody, satire, news commentary, documentary work and political speech are protected speech under both US and Indian law, and we do not file takedowns against them. Ambiguous cases route to a human review queue. We publish a transparency report disclosing takedown volumes, categories and counter-notices because the alternative — a black-box censorship engine — is genuinely dangerous, and we refuse to operate one.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>What about content that already exists about me — years of unauthorized use online?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The initial sweep we run in your first week of subscription is exactly designed to surface that backlog. You'll likely see a large volume of detections at the beginning — much of it legitimate (fan content, news coverage), some of it actionable. Your case team prioritizes by category and risk: NCII and commercial fraud first, defamation and impersonation next, ambiguous content for review. Don't expect every old upload to disappear in the first week — backlogs of years take time to work through, and not everything will be removable. Expect meaningful progress in the first 30 days and continued reduction over months.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Who is behind Anty AI?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Anty AI is being built by a team with backgrounds in computer vision, audio biometrics, intermediary-liability law and talent representation. Detailed team disclosures, advisory board, capital structure and security audits will be published in our investor and client briefing memorandum, available to qualified parties under NDA on request via the form above.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <div class="footer-mark">
+          <span>Anty</span><span class="ai">.ai</span>
+        </div>
+        <p class="footer-tag">The shield for your <em>likeness</em> — operating worldwide, with depth where it matters.</p>
+        <a href="#waitlist" class="btn btn-ghost" style="border-color: var(--gold-light); color: var(--gold-light); background: transparent;">Reserve early access →</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#protect">What we protect</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#limits">Honest limits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="terms.html">Reservation Terms</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="dpdp-notice.html">DPDP Notice</a></li>
+          <li><a href="privacy.html#gdpr">GDPR Notice</a></li>
+          <li><a href="#">Transparency Report</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@antyai.com">hello@antyai.com</a></li>
+          <li><a href="mailto:legal@antyai.com">legal@antyai.com</a></li>
+          <li><a href="mailto:agencies@antyai.com">agencies@antyai.com</a></li>
+          <li><a href="mailto:press@antyai.com">press@antyai.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ANTY AI · ANTYAI.COM · ALL RIGHTS RESERVED</span>
+      <span>BIOMETRIC IDENTITY PROTECTION · IN PRIVATE BETA</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════ MODAL ═══ -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal">
+    <h3>You're <em>on the list.</em></h3>
+    <p>Your reservation has been received. A confirmation has been sent to your email along with deposit-escrow instructions. Our team will reach out personally if your category requires onboarding diligence.</p>
+    <span class="ref" id="ref-id">REF · ANTY-XXXX-XXXX</span>
+    <button class="btn btn-primary" onclick="document.getElementById('modal').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script>
+/* ───────── Pricing currency toggle ───────── */
+const toggleBtns = document.querySelectorAll('.pricing-toggle button');
+const tierPrices = document.querySelectorAll('.tier-price');
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const curr = btn.dataset.curr;
+    tierPrices.forEach(p => {
+      const value = curr === 'usd' ? p.dataset.usd : p.dataset.inr;
+      const period = p.querySelector('.period').outerHTML;
+      p.innerHTML = value + period;
+    });
+  });
+});
+
+/* ───────── Deposit slider + presets ───────── */
+const slider = document.getElementById('deposit-slider');
+const display = document.getElementById('deposit-display');
+const presets = document.querySelectorAll('.preset');
+
+function fmt(n) { return n.toLocaleString('en-IN'); }
+
+slider.addEventListener('input', () => {
+  display.textContent = fmt(parseInt(slider.value));
+  presets.forEach(p => p.classList.remove('active'));
+});
+
+presets.forEach(p => {
+  p.addEventListener('click', () => {
+    presets.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    const val = parseInt(p.dataset.amount);
+    slider.value = val;
+    display.textContent = fmt(val);
+  });
+});
+
+/* ───────── Form submit ───────── */
+const form = document.getElementById('waitlist-form');
+const modal = document.getElementById('modal');
+const refId = document.getElementById('ref-id');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const role = document.getElementById('role').value;
+  const region = document.getElementById('region').value;
+
+  if (!name || !email || !role || !region) {
+    form.querySelectorAll('input, select').forEach(el => {
+      if (!el.value) el.style.borderColor = '#7A2E2E';
+      else el.style.borderColor = '';
+    });
+    return;
+  }
+
+  const rand = () => Math.floor(1000 + Math.random() * 9000);
+  refId.textContent = `REF · ANTY-${rand()}-${rand()}`;
+  modal.classList.add('show');
+  form.reset();
+  display.textContent = '2,000';
+  slider.value = 2000;
+  presets.forEach(p => p.classList.remove('active'));
+  document.querySelector('.preset[data-amount="2000"]').classList.add('active');
+});
+
+/* ───────── FAQ accordion ───────── */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+/* ───────── Reveal on scroll ───────── */
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
 </html>
