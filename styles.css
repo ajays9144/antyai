@@ -1,0 +1,58 @@
+/* ============================================================
+   ANTY AI · Shared design tokens & base
+   Loaded by every page. Edit colors, fonts and global resets here.
+   Page-specific styles live inline in each HTML file (or in
+   legal.css for the legal pages, which is loaded after this).
+   ============================================================ */
+
+:root {
+  /* Palette */
+  --cream:      #F8F4EC;
+  --cream-2:    #F2ECDD;
+  --paper:      #FDFAF3;
+  --paper-pure: #FFFFFF;
+
+  --ink:        #1A1814;
+  --ink-2:      #2D2A23;
+  --mute:       #6B6457;
+  --whisper:    #9C9586;
+
+  --gold:       #B8923D;
+  --gold-deep:  #8C6F2E;
+  --gold-light: #D4B66E;
+  --gold-soft:  #F0E5C8;
+  --gold-tint:  rgba(184, 146, 61, 0.08);
+
+  --burgundy:   #7A2E2E;
+  --olive:      #5C6B3D;
+
+  --line:       rgba(26, 24, 20, 0.10);
+  --line-soft:  rgba(26, 24, 20, 0.05);
+  --line-gold:  rgba(184, 146, 61, 0.25);
+
+  /* Type */
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --sans:    'Manrope', system-ui, -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--gold); color: var(--paper-pure); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
