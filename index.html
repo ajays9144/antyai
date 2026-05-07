@@ -2655,12 +2655,23 @@ presets.forEach(p => {
   });
 });
 
-/* ───────── Form submit ───────── */
+/* ───────── Form submit → Google Apps Script ───────── */
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz83M58P6IGq017BZzLOqLmUCT41Q_XcmwkDE8NsdentnajaD6Wykh9itN2uKTw290l_g/exec';
+
 const form = document.getElementById('waitlist-form');
 const modal = document.getElementById('modal');
 const refId = document.getElementById('ref-id');
+const submitBtn = form.querySelector('.submit-btn');
+const rand = () => Math.floor(1000 + Math.random() * 9000);
 
-form.addEventListener('submit', (e) => {
+function resetDeposit() {
+  display.textContent = '2,000';
+  slider.value = 2000;
+  presets.forEach(p => p.classList.remove('active'));
+  document.querySelector('.preset[data-amount="2000"]').classList.add('active');
+}
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -2675,14 +2686,48 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  const rand = () => Math.floor(1000 + Math.random() * 9000);
-  refId.textContent = `REF · ANTY-${rand()}-${rand()}`;
-  modal.classList.add('show');
-  form.reset();
-  display.textContent = '2,000';
-  slider.value = 2000;
-  presets.forEach(p => p.classList.remove('active'));
-  document.querySelector('.preset[data-amount="2000"]').classList.add('active');
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Reserving…';
+
+  const reference = `ANTY-${rand()}-${rand()}`;
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    name,
+    email,
+    country: region,
+    businessType: role,
+    budget: '₹' + parseInt(slider.value).toLocaleString('en-IN'),
+    message: reference,
+    query: '',
+    source: 'waitlist'
+  };
+
+  try {
+    // Apps Script doesn't return CORS headers; no-cors + text/plain avoids preflight.
+    // The request still reaches the script; response is opaque, so we treat fetch resolution as success.
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    refId.textContent = `REF · ${reference}`;
+    modal.classList.add('show');
+    form.reset();
+    resetDeposit();
+  } catch (err) {
+    submitBtn.textContent = 'Failed — please try again';
+    setTimeout(() => {
+      submitBtn.textContent = originalLabel;
+      submitBtn.disabled = false;
+    }, 3000);
+    return;
+  }
+
+  submitBtn.textContent = originalLabel;
+  submitBtn.disabled = false;
 });
 
 /* ───────── FAQ accordion ───────── */
