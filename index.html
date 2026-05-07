@@ -2013,8 +2013,8 @@ footer {
           <div class="tl-time">Today</div>
           <div class="tl-marker"></div>
           <div class="tl-event">
-            <h4>You reserve your place.</h4>
-            <p>You submit the form below with a refundable interest deposit, held in regulated escrow. You receive a confirmation email and a reference number. No biometric data is collected at this stage.</p>
+            <h4>You join the waitlist.</h4>
+            <p>You submit the form below — no payment, no card, no commitment. You receive a confirmation email and a reference number. No biometric data is collected at this stage.</p>
           </div>
         </div>
         <div class="tl-row">
@@ -2022,7 +2022,7 @@ footer {
           <div class="tl-marker"></div>
           <div class="tl-event">
             <h4>We invite you to onboard.</h4>
-            <p>You receive a private onboarding link. Your deposit is automatically credited toward your first subscription year of the tier you choose. You verify identity with government-issued ID and authorize the relationship — for celebrities, this is typically done through your manager or legal counsel under NDA.</p>
+            <p>You receive a private onboarding link. You choose a subscription tier and complete payment for your first year. You verify identity with government-issued ID and authorize the relationship — for celebrities, this is typically done through your manager or legal counsel under NDA.</p>
           </div>
         </div>
         <div class="tl-row">
@@ -2308,7 +2308,7 @@ footer {
     </div>
 
     <div class="reveal" style="margin-bottom: 48px;">
-      <p class="lead">Five tiers. Refundable interest deposits available now to lock in launch pricing — credited in full toward your first subscription year.</p>
+      <p class="lead">Five tiers. Indicate your willingness-to-pay range when you join the waitlist, and we'll prioritize onboarding accordingly when Anty AI launches in 2026.</p>
       <div class="pricing-toggle" style="margin-top: 32px;">
         <button class="active" data-curr="inr">INR</button>
         <button data-curr="usd">USD</button>
@@ -2382,9 +2382,9 @@ footer {
 <section class="waitlist-section" id="waitlist">
   <div class="wrap">
     <div class="waitlist-wrap reveal">
-      <div class="eyebrow" style="margin-bottom: 24px; justify-content: center;">Reserve · Launch · 2026</div>
-      <h2>Reserve your <em>place.</em><br>Lock in launch <em>pricing.</em></h2>
-      <p>Secure early access with a fully refundable interest deposit. Credited in full toward your first subscription when Anty AI launches in 2026. Held in regulated escrow. Refundable on request.</p>
+      <div class="eyebrow" style="margin-bottom: 24px; justify-content: center;">Join the Waitlist · Launching 2026</div>
+      <h2>Join the <em>waitlist.</em><br>Help shape our <em>pricing.</em></h2>
+      <p>Tell us what you'd be willing to invest in protection. We use this signal to prioritize who we onboard first when Anty AI launches in 2026 and to finalize pricing for each tier. <strong>No payment now. No card required. No commitment.</strong></p>
 
       <div class="form-card">
         <form id="waitlist-form" novalidate>
@@ -2428,9 +2428,55 @@ footer {
             </div>
           </div>
 
+          <div class="form-row">
+            <div class="field" style="margin-bottom: 0;">
+              <label for="phone-code">Country code (optional)</label>
+              <select id="phone-code" name="phone-code">
+                <option value="">Select code</option>
+                <option value="+91">India (+91)</option>
+                <option value="" disabled>──────────</option>
+                <option value="+61">Australia (+61)</option>
+                <option value="+880">Bangladesh (+880)</option>
+                <option value="+55">Brazil (+55)</option>
+                <option value="+1">Canada (+1)</option>
+                <option value="+86">China (+86)</option>
+                <option value="+20">Egypt (+20)</option>
+                <option value="+33">France (+33)</option>
+                <option value="+49">Germany (+49)</option>
+                <option value="+852">Hong Kong (+852)</option>
+                <option value="+62">Indonesia (+62)</option>
+                <option value="+39">Italy (+39)</option>
+                <option value="+81">Japan (+81)</option>
+                <option value="+60">Malaysia (+60)</option>
+                <option value="+52">Mexico (+52)</option>
+                <option value="+31">Netherlands (+31)</option>
+                <option value="+234">Nigeria (+234)</option>
+                <option value="+92">Pakistan (+92)</option>
+                <option value="+63">Philippines (+63)</option>
+                <option value="+966">Saudi Arabia (+966)</option>
+                <option value="+65">Singapore (+65)</option>
+                <option value="+27">South Africa (+27)</option>
+                <option value="+82">South Korea (+82)</option>
+                <option value="+34">Spain (+34)</option>
+                <option value="+94">Sri Lanka (+94)</option>
+                <option value="+46">Sweden (+46)</option>
+                <option value="+41">Switzerland (+41)</option>
+                <option value="+66">Thailand (+66)</option>
+                <option value="+971">United Arab Emirates (+971)</option>
+                <option value="+44">United Kingdom (+44)</option>
+                <option value="+1">United States (+1)</option>
+                <option value="+84">Vietnam (+84)</option>
+              </select>
+            </div>
+            <div class="field" style="margin-bottom: 0;">
+              <label for="phone-number">Mobile (optional)</label>
+              <input type="tel" id="phone-number" name="phone-number" placeholder="9876543210">
+            </div>
+          </div>
+
           <div class="deposit-area">
             <div class="deposit-header">
-              <span class="deposit-label">Interest deposit · refundable</span>
+              <span class="deposit-label">Willing to pay annually</span>
               <div class="deposit-amount">
                 <span class="deposit-currency">₹</span><span id="deposit-display">2,000</span>
               </div>
@@ -2451,16 +2497,16 @@ footer {
             </div>
 
             <div class="deposit-note">
-              <strong>What this means.</strong> Your deposit is held in regulated escrow and is fully refundable on written request. At launch, the full amount is credited toward your first subscription year. This is an interest reservation — not a security, not an investment, and not a guarantee of any future return.
+              <strong>This is a non-binding indication.</strong> We use it to prioritize who we invite first when Anty AI launches and to finalize pricing for each tier. There is no payment, no card collection and no escrow at this stage — just a signal to help us serve you better at launch.
             </div>
           </div>
 
           <button type="submit" class="submit-btn">
-            Reserve my place →
+            Join the waitlist →
           </button>
 
           <p class="tos-line">
-            By reserving, you confirm you have read and agree to the <a href="terms.html">Reservation Terms</a>, <a href="privacy.html">Privacy Policy</a> and <a href="dpdp-notice.html">DPDP / GDPR Notice</a>. Anty AI does not sell or share biometric data, ever.
+            By joining the waitlist, you confirm you have read and agree to the <a href="terms.html">Reservation Terms</a>, <a href="privacy.html">Privacy Policy</a> and <a href="dpdp-notice.html">DPDP / GDPR Notice</a>. Anty AI does not sell or share biometric data, ever.
           </p>
         </form>
       </div>
@@ -2486,7 +2532,7 @@ footer {
           <span class="faq-toggle">+</span>
         </button>
         <div class="faq-a">
-          <p>No — and we will never claim that. Open-source generation tools cannot be unbuilt and bad actors can produce content locally without ever touching a platform. What Anty AI does is detect unauthorized images, videos and audio of you the moment they surface publicly, and remove 90 to 95 percent of them within 24 hours through legal takedowns. We are damage limitation at industrial scale, not a magic shield. We say this in writing because every honest player in this category does.</p>
+          <p>No — and we will never claim that. Open-source generation tools cannot be unbuilt and bad actors can produce content locally without ever touching a platform. What Anty AI does is detect unauthorized images, videos and audio of you the moment they surface publicly, and remove 94 to 98 percent of them within 24 to 72 hours on cooperative platforms through legal takedowns. We are damage limitation at industrial scale, not a magic shield. We say this in writing because every honest player in this category does.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -2500,11 +2546,11 @@ footer {
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          <span>What is the refund policy on the interest deposit?</span>
+          <span>Do I have to pay anything to join the waitlist?</span>
           <span class="faq-toggle">+</span>
         </button>
         <div class="faq-a">
-          <p>Your deposit is held in regulated escrow with a partner financial institution. You may request a full refund at any time before launch — we process refunds within seven business days, no questions asked. At launch, the full deposit amount is credited toward your first subscription year of the tier you choose. The deposit is not a security or an investment and offers no return; it is an interest reservation that locks in launch pricing for you.</p>
+          <p>No. The waitlist is free and non-binding — no card, no deposit, no escrow. The "willing to pay annually" slider is only an indication that helps us prioritize who we invite first at launch and finalize pricing for each tier; it is not a charge or a commitment. The first time any money changes hands is when you choose to subscribe to a tier after launch in 2026.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -2585,7 +2631,6 @@ footer {
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="dpdp-notice.html">DPDP Notice</a></li>
           <li><a href="privacy.html#gdpr">GDPR Notice</a></li>
-          <li><a href="#">Transparency Report</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2610,7 +2655,7 @@ footer {
 <div class="modal-backdrop" id="modal">
   <div class="modal">
     <h3>You're <em>on the list.</em></h3>
-    <p>Your reservation has been received. A confirmation has been sent to your email along with deposit-escrow instructions. Our team will reach out personally if your category requires onboarding diligence.</p>
+    <p>You're on the waitlist. We'll email you when Anty AI is ready to onboard you in 2026. Our team will reach out personally if your category requires extra onboarding diligence.</p>
     <span class="ref" id="ref-id">REF · ANTY-XXXX-XXXX</span>
     <button class="btn btn-primary" onclick="document.getElementById('modal').classList.remove('show')">Close</button>
   </div>
@@ -2692,6 +2737,11 @@ form.addEventListener('submit', async (e) => {
 
   const reference = `ANTY-${rand()}-${rand()}`;
 
+  // Combine optional country code + mobile into a single string for the sheet.
+  const phoneCode = document.getElementById('phone-code').value;
+  const phoneNumber = document.getElementById('phone-number').value.trim();
+  const phone = (phoneCode && phoneNumber) ? `${phoneCode} ${phoneNumber}` : '';
+
   const payload = {
     timestamp: new Date().toISOString(),
     name,
@@ -2700,7 +2750,7 @@ form.addEventListener('submit', async (e) => {
     businessType: role,
     budget: '₹' + parseInt(slider.value).toLocaleString('en-IN'),
     message: reference,
-    query: '',
+    query: phone,
     source: 'waitlist'
   };
 
