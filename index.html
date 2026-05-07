@@ -2738,9 +2738,11 @@ form.addEventListener('submit', async (e) => {
   const reference = `ANTY-${rand()}-${rand()}`;
 
   // Combine optional country code + mobile into a single string for the sheet.
+  // Leading apostrophe prevents Google Sheets from interpreting "+91 ..." as a formula
+  // (the apostrophe is stripped from the cell display automatically).
   const phoneCode = document.getElementById('phone-code').value;
   const phoneNumber = document.getElementById('phone-number').value.trim();
-  const phone = (phoneCode && phoneNumber) ? `${phoneCode} ${phoneNumber}` : '';
+  const phone = (phoneCode && phoneNumber) ? `'${phoneCode} ${phoneNumber}` : '';
 
   const payload = {
     timestamp: new Date().toISOString(),
