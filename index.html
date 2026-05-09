@@ -1309,7 +1309,8 @@ section {
   font-weight: 500;
 }
 .field input,
-.field select {
+.field select,
+.field textarea {
   background: var(--cream);
   border: 1px solid var(--line);
   padding: 14px 16px;
@@ -1321,12 +1322,87 @@ section {
   width: 100%;
 }
 .field input:focus,
-.field select:focus {
+.field select:focus,
+.field textarea:focus {
   outline: none;
   border-color: var(--gold);
   background: var(--paper-pure);
 }
-.field input::placeholder { color: var(--whisper); }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--whisper); }
+.field textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+  font-family: var(--sans);
+}
+
+/* Tier priority badge (per-tier response/SLA indicator) */
+.tier-priority {
+  padding: 12px 14px;
+  background: var(--gold-tint);
+  border: 1px solid var(--line-gold);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.tier-priority .tier-priority-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+.tier-priority strong {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 14.5px;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  line-height: 1.25;
+}
+
+/* Bespoke / one-time engagement banner (sits below the tier grid) */
+.bespoke {
+  margin-top: 32px;
+  padding: 36px 40px;
+  background: linear-gradient(135deg, var(--paper-pure), var(--gold-tint));
+  border: 1px solid var(--line-gold);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+}
+@media (max-width: 820px) {
+  .bespoke { grid-template-columns: 1fr; padding: 28px 24px; }
+}
+.bespoke .bespoke-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: block;
+  margin-bottom: 10px;
+}
+.bespoke h3 {
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.bespoke h3 em { font-style: italic; color: var(--gold-deep); }
+.bespoke p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 620px;
+}
 
 .deposit-area {
   margin: 28px 0;
@@ -2320,6 +2396,10 @@ footer {
         <div class="tier-name">Free</div>
         <div class="tier-price" data-inr="₹0" data-usd="$0">₹0<span class="period"> /year</span></div>
         <div class="tier-target">For awareness — a single scan, weekly digest, manual takedowns.</div>
+        <div class="tier-priority">
+          <span class="tier-priority-label">Priority</span>
+          <strong>Weekly digest only</strong>
+        </div>
         <ul class="tier-features">
           <li>1 face/voice scan</li>
           <li>Weekly monitoring digest</li>
@@ -2329,8 +2409,12 @@ footer {
       </div>
       <div class="tier">
         <div class="tier-name">Individual</div>
-        <div class="tier-price" data-inr="₹2,400" data-usd="$30">₹2,400<span class="period"> /year</span></div>
+        <div class="tier-price" data-inr="₹3,000" data-usd="$30">₹3,000<span class="period"> /month</span></div>
         <div class="tier-target">For executives, professionals, public-facing private citizens.</div>
+        <div class="tier-priority">
+          <span class="tier-priority-label">Priority</span>
+          <strong>48-hour response</strong>
+        </div>
         <ul class="tier-features">
           <li>Continuous monitoring</li>
           <li>Automated DMCA</li>
@@ -2342,6 +2426,10 @@ footer {
         <div class="tier-name">Creator</div>
         <div class="tier-price" data-inr="₹50,000" data-usd="$600">₹50,000<span class="period"> /year</span></div>
         <div class="tier-target">For 100K–1M follower creators, regional artists, athletes.</div>
+        <div class="tier-priority">
+          <span class="tier-priority-label">Priority</span>
+          <strong>24-hour response</strong>
+        </div>
         <ul class="tier-features">
           <li>Everything in Individual</li>
           <li>Telegram + dark-web monitoring</li>
@@ -2354,6 +2442,10 @@ footer {
         <div class="tier-name">Celebrity</div>
         <div class="tier-price" data-inr="₹5,00,000+" data-usd="$6,000+">₹5,00,000+<span class="period"> /year</span></div>
         <div class="tier-target">For A-list stars, top athletes, public figures, religious leaders.</div>
+        <div class="tier-priority">
+          <span class="tier-priority-label">Priority</span>
+          <strong>&lt;2-hour response · 24/7 hotline</strong>
+        </div>
         <ul class="tier-features">
           <li>White-glove case management</li>
           <li>Direct legal coordination</li>
@@ -2366,6 +2458,10 @@ footer {
         <div class="tier-name">Enterprise</div>
         <div class="tier-price" data-inr="₹1 Cr+" data-usd="$120K+">₹1 Cr+<span class="period"> /year</span></div>
         <div class="tier-target">For talent agencies, studios, sports leagues, OTT platforms.</div>
+        <div class="tier-priority">
+          <span class="tier-priority-label">Priority</span>
+          <strong>Dedicated team · SLA-backed</strong>
+        </div>
         <ul class="tier-features">
           <li>Bulk roster coverage</li>
           <li>Full API access</li>
@@ -2374,6 +2470,16 @@ footer {
           <li>White-label option</li>
         </ul>
       </div>
+    </div>
+
+    <!-- Bespoke / one-time engagement banner -->
+    <div class="bespoke reveal">
+      <div>
+        <span class="bespoke-label">Bespoke · One-time</span>
+        <h3>Active crisis or <em>one-time</em> engagement?</h3>
+        <p>Single-incident takedown, post-leak response, brand-protection sprint, or anything that doesn't fit the standard tiers — we work case-by-case. Tell us what's happening using the form below; we'll respond with a scoped proposal and timing. Pricing is on demand and negotiated per case.</p>
+      </div>
+      <a href="#waitlist" class="btn btn-primary">Discuss your case <span>→</span></a>
     </div>
   </div>
 </section>
@@ -2410,6 +2516,7 @@ footer {
                 <option>Talent agent / Manager</option>
                 <option>Legal counsel</option>
                 <option>Studio / Agency / Enterprise</option>
+                <option>Bespoke / One-time engagement</option>
               </select>
             </div>
             <div class="field" style="margin-bottom: 0;">
@@ -2472,6 +2579,11 @@ footer {
               <label for="phone-number">Mobile (optional)</label>
               <input type="tel" id="phone-number" name="phone-number" placeholder="9876543210">
             </div>
+          </div>
+
+          <div class="field" style="margin-bottom: 0;">
+            <label for="notes">Explain what you need (optional)</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="What's your situation? Why are you reaching out? Any specific concerns, timelines or use cases we should know about? Especially helpful if you selected 'Bespoke / One-time engagement' above."></textarea>
           </div>
 
           <div class="deposit-area">
@@ -2743,6 +2855,7 @@ form.addEventListener('submit', async (e) => {
   const phoneCode = document.getElementById('phone-code').value;
   const phoneNumber = document.getElementById('phone-number').value.trim();
   const phone = (phoneCode && phoneNumber) ? `'${phoneCode} ${phoneNumber}` : '';
+  const notes = document.getElementById('notes').value.trim();
 
   const payload = {
     timestamp: new Date().toISOString(),
@@ -2753,7 +2866,8 @@ form.addEventListener('submit', async (e) => {
     budget: '₹' + parseInt(slider.value).toLocaleString('en-IN'),
     message: reference,
     query: phone,
-    source: 'waitlist'
+    source: 'waitlist',
+    notes: notes
   };
 
   try {
