@@ -1525,6 +1525,51 @@ section {
   margin-top: 4px;
 }
 .field-error[hidden] { display: none; }
+
+/* Notes field — visually emphasized "tell us your situation" variant */
+.field-notes .field-label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.field-notes .recommended-chip {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  background: var(--gold-tint);
+  border: 1px solid var(--line-gold);
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-weight: 500;
+  line-height: 1;
+}
+.field-notes .field-help {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--mute);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.field-notes textarea {
+  background: var(--gold-tint);
+  border: 1px solid var(--line-gold);
+  border-left: 3px solid var(--gold);
+  min-height: 130px;
+}
+.field-notes textarea:focus {
+  background: var(--paper-pure);
+  border-color: var(--gold);
+  border-left-color: var(--gold);
+}
+.field-notes textarea::placeholder {
+  color: var(--mute);
+  opacity: 0.85;
+}
 .field input,
 .field select,
 .field textarea {
@@ -2844,9 +2889,13 @@ footer {
             </div>
           </div>
 
-          <div class="field" style="margin-bottom: 0;">
-            <label for="notes" data-i18n="form.notes.label">Explain what you need (optional)</label>
-            <textarea id="notes" name="notes" rows="4" placeholder="What's your situation? Why are you reaching out? Any specific concerns, timelines or use cases we should know about? Especially helpful if you selected 'Bespoke / One-time engagement' above." data-i18n-placeholder="form.notes.placeholder"></textarea>
+          <div class="field field-notes" style="margin-bottom: 0;">
+            <div class="field-label-row">
+              <label for="notes" data-i18n="form.notes.label">Tell us your situation</label>
+              <span class="recommended-chip" data-i18n="form.notes.recommended">Recommended</span>
+            </div>
+            <span class="field-help" data-i18n="form.notes.help">More context helps us prioritize and route your case to the right specialist.</span>
+            <textarea id="notes" name="notes" rows="4" placeholder="e.g.&#10;Recent leak on Instagram&#10;Setting up for a client roster&#10;Active deepfake crisis — urgent" data-i18n-placeholder="form.notes.placeholder"></textarea>
           </div>
 
           <div class="deposit-area">
