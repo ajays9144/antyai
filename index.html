@@ -231,6 +231,127 @@ nav {
   .nav-mobile { display: block; }
 }
 
+/* ─────────── Language switcher ───────────
+ * UI signal only — only English is functional today. Disabled
+ * languages exist to communicate planned future support. */
+.lang-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.lang-trigger {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+.lang-trigger:hover { border-color: var(--gold); color: var(--gold-deep); }
+.lang-trigger .chevron {
+  font-size: 10px;
+  color: var(--mute);
+  transition: transform 0.25s ease;
+}
+.lang-trigger.open .chevron { transform: rotate(180deg); }
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 220px;
+  background: var(--paper-pure);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px -8px rgba(26, 24, 20, 0.12);
+  padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 110;
+}
+.lang-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-weight: 400;
+}
+.lang-option:hover:not(.disabled) {
+  background: var(--cream);
+  color: var(--ink);
+}
+.lang-option.active {
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+.lang-option.active::after {
+  content: '✓';
+  font-family: var(--display);
+  color: var(--gold);
+  margin-left: 12px;
+}
+.lang-option.disabled {
+  color: var(--whisper);
+  cursor: default;
+}
+.lang-option .lang-status {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--whisper);
+  margin-left: 12px;
+}
+
+@media (max-width: 920px) {
+  /* Hide desktop language switcher on mobile — it appears inside the hamburger menu instead */
+  nav .lang-switcher { display: none; }
+}
+
+/* Mobile nav: language section */
+.nav-mobile-lang {
+  margin-top: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+}
+.nav-mobile-lang-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 6px;
+  display: block;
+}
+.nav-mobile-lang .lang-option {
+  padding: 10px 0;
+  font-size: 16px;
+}
+
 /* ═══════════════════════════════════════════════════════════
    HERO
    ═══════════════════════════════════════════════════════════ */
@@ -1833,13 +1954,30 @@ footer {
     <span>Anty</span><span class="ai">.ai</span>
   </div>
   <div class="nav-links">
-    <a href="#how">How It Works</a>
-    <a href="#protect">Protection</a>
-    <a href="#legal">Legal</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#protect" data-i18n="nav.protect">Protection</a>
+    <a href="#legal" data-i18n="nav.legal">Legal</a>
+    <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
   </div>
-  <a href="#waitlist" class="nav-cta">Reserve Access</a>
+  <div class="lang-switcher">
+    <button class="lang-trigger" id="lang-trigger" aria-haspopup="true" aria-expanded="false">
+      <span id="lang-current">EN</span>
+      <span class="chevron">▾</span>
+    </button>
+    <div class="lang-menu" id="lang-menu" role="menu">
+      <button class="lang-option active" data-lang="en"><span class="lang-name">English</span></button>
+      <button class="lang-option" data-lang="hi"><span class="lang-name">हिन्दी</span></button>
+      <button class="lang-option disabled" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option" data-lang="es"><span class="lang-name">Español</span></button>
+      <button class="lang-option disabled" data-lang="pt"><span class="lang-name">Português</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="fr"><span class="lang-name">Français</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="de"><span class="lang-name">Deutsch</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="ar"><span class="lang-name">العربية</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="zh"><span class="lang-name">中文</span><span class="lang-status">Soon</span></button>
+    </div>
+  </div>
+  <a href="#waitlist" class="nav-cta" data-i18n="nav.cta">Reserve Access</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -1847,11 +1985,23 @@ footer {
 
 <div class="nav-mobile" id="nav-mobile">
   <div class="nav-mobile-inner">
-    <a href="#how">How It Works</a>
-    <a href="#protect">Protection</a>
-    <a href="#legal">Legal</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#protect" data-i18n="nav.protect">Protection</a>
+    <a href="#legal" data-i18n="nav.legal">Legal</a>
+    <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <div class="nav-mobile-lang">
+      <span class="nav-mobile-lang-label" data-i18n="nav.langLabel">Language</span>
+      <button class="lang-option active" data-lang="en"><span class="lang-name">English</span></button>
+      <button class="lang-option" data-lang="hi"><span class="lang-name">हिन्दी</span></button>
+      <button class="lang-option disabled" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option" data-lang="es"><span class="lang-name">Español</span></button>
+      <button class="lang-option disabled" data-lang="pt"><span class="lang-name">Português</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="fr"><span class="lang-name">Français</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="de"><span class="lang-name">Deutsch</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="ar"><span class="lang-name">العربية</span><span class="lang-status">Soon</span></button>
+      <button class="lang-option disabled" data-lang="zh"><span class="lang-name">中文</span><span class="lang-status">Soon</span></button>
+    </div>
   </div>
 </div>
 
@@ -1864,35 +2014,38 @@ footer {
     <div>
       <div class="hero-status">
         <span class="pulse-dot"></span>
-        Private Beta · Reserving Now · Launching 2026
+        <span data-i18n="hero.status">Private Beta · Reserving Now · Launching 2026</span>
       </div>
 
-      <h1 class="hero-title">
+      <h1 class="hero-title" data-i18n="hero.title">
         Your face. Your voice.<br>
         Your <em>terms.</em>
       </h1>
 
-      <p class="hero-sub">
+      <p class="hero-sub" data-i18n="hero.subtitle">
         Anty AI is the <strong>identity-protection platform</strong> for celebrities, public figures and high-value individuals worldwide. We continuously scan the internet for unauthorized use of your likeness — across every major platform, in 14 languages — and get the content taken down through the appropriate legal channels.
       </p>
 
       <div class="hero-honest">
         <span class="ico">!</span>
-        <p><strong>What we do — clearly.</strong> We help you remove unauthorized images, videos and audio of you from platforms across the internet. We do not — and cannot — prevent someone from creating content of you, uploading it, or being held personally accountable for it. No service can. Our work begins the moment such content surfaces publicly: we find it, classify it, and get it removed.</p>
+        <p>
+          <strong data-i18n="hero.honestTitle">What we do — clearly.</strong>
+          <span data-i18n="hero.honestBody">We help you remove unauthorized images, videos and audio of you from platforms across the internet. We do not — and cannot — prevent someone from creating content of you, uploading it, or being held personally accountable for it. No service can. Our work begins the moment such content surfaces publicly: we find it, classify it, and get it removed.</span>
+        </p>
       </div>
 
       <div class="hero-ctas">
         <a href="#waitlist" class="btn btn-primary">
-          Reserve early access
+          <span data-i18n="hero.ctaPrimary">Reserve early access</span>
           <span>→</span>
         </a>
-        <a href="#how" class="btn btn-ghost">See how it works</a>
+        <a href="#how" class="btn btn-ghost" data-i18n="hero.ctaSecondary">See how it works</a>
       </div>
 
       <div class="geo-bar">
-        <span><strong>Always-on monitoring.</strong> 24 / 7 / 365</span>
-        <span><strong>14 languages.</strong> From Hindi to Spanish</span>
-        <span><strong>6 jurisdictions.</strong> Global legal coverage</span>
+        <span data-i18n="hero.geo1"><strong>Always-on monitoring.</strong> 24 / 7 / 365</span>
+        <span data-i18n="hero.geo2"><strong>14 languages.</strong> From Hindi to Spanish</span>
+        <span data-i18n="hero.geo3"><strong>6 jurisdictions.</strong> Global legal coverage</span>
       </div>
     </div>
 
@@ -2597,59 +2750,59 @@ footer {
 <section class="waitlist-section" id="waitlist">
   <div class="wrap">
     <div class="waitlist-wrap reveal">
-      <div class="eyebrow" style="margin-bottom: 24px; justify-content: center;">Join the Waitlist · Launching 2026</div>
-      <h2>Join the <em>waitlist.</em><br>Help shape our <em>pricing.</em></h2>
-      <p>Tell us what you'd be willing to invest in protection. We use this signal to prioritize who we onboard first when Anty AI launches in 2026 and to finalize pricing for each tier. <strong>No payment now. No card required. No commitment.</strong></p>
+      <div class="eyebrow" style="margin-bottom: 24px; justify-content: center;" data-i18n="waitlist.eyebrow">Join the Waitlist · Launching 2026</div>
+      <h2 data-i18n="waitlist.title">Join the <em>waitlist.</em><br>Help shape our <em>pricing.</em></h2>
+      <p data-i18n="waitlist.subtitle">Tell us what you'd be willing to invest in protection. We use this signal to prioritize who we onboard first when Anty AI launches in 2026 and to finalize pricing for each tier. <strong>No payment now. No card required. No commitment.</strong></p>
 
       <div class="form-card">
         <form id="waitlist-form" novalidate>
           <div class="form-row">
             <div class="field" style="margin-bottom: 0;">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Your name or representative" required>
+              <label for="name" data-i18n="form.name.label">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Your name or representative" data-i18n-placeholder="form.name.placeholder" required>
             </div>
             <div class="field" style="margin-bottom: 0;">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@domain.com" required>
-              <span class="field-error" id="email-error" hidden>Please enter a valid email address.</span>
+              <label for="email" data-i18n="form.email.label">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@domain.com" data-i18n-placeholder="form.email.placeholder" required>
+              <span class="field-error" id="email-error" data-i18n="form.errorEmail" hidden>Please enter a valid email address.</span>
             </div>
           </div>
 
           <div class="form-row">
             <div class="field" style="margin-bottom: 0;">
-              <label for="role">I am a</label>
+              <label for="role" data-i18n="form.role.label">I am a</label>
               <select id="role" name="role" required>
-                <option value="">Select category</option>
-                <option>Individual / Private citizen</option>
-                <option>Creator / Influencer</option>
-                <option>Celebrity / Public figure</option>
-                <option>Talent agent / Manager</option>
-                <option>Legal counsel</option>
-                <option>Studio / Agency / Enterprise</option>
-                <option>Bespoke / One-time engagement</option>
+                <option value="" data-i18n="form.role.placeholder">Select category</option>
+                <option data-i18n="form.role.opt1">Individual / Private citizen</option>
+                <option data-i18n="form.role.opt2">Creator / Influencer</option>
+                <option data-i18n="form.role.opt3">Celebrity / Public figure</option>
+                <option data-i18n="form.role.opt4">Talent agent / Manager</option>
+                <option data-i18n="form.role.opt5">Legal counsel</option>
+                <option data-i18n="form.role.opt6">Studio / Agency / Enterprise</option>
+                <option data-i18n="form.role.opt7">Bespoke / One-time engagement</option>
               </select>
             </div>
             <div class="field" style="margin-bottom: 0;">
-              <label for="region">Primary region</label>
+              <label for="region" data-i18n="form.region.label">Primary region</label>
               <select id="region" name="region" required>
-                <option value="">Select region</option>
-                <option>India</option>
-                <option>South Asia (excl. India)</option>
-                <option>Southeast Asia</option>
-                <option>Middle East · GCC</option>
-                <option>United States · Canada</option>
-                <option>Europe · UK</option>
-                <option>Latin America</option>
-                <option>Other</option>
+                <option value="" data-i18n="form.region.placeholder">Select region</option>
+                <option data-i18n="form.region.opt1">India</option>
+                <option data-i18n="form.region.opt2">South Asia (excl. India)</option>
+                <option data-i18n="form.region.opt3">Southeast Asia</option>
+                <option data-i18n="form.region.opt4">Middle East · GCC</option>
+                <option data-i18n="form.region.opt5">United States · Canada</option>
+                <option data-i18n="form.region.opt6">Europe · UK</option>
+                <option data-i18n="form.region.opt7">Latin America</option>
+                <option data-i18n="form.region.opt8">Other</option>
               </select>
             </div>
           </div>
 
           <div class="form-row">
             <div class="field" style="margin-bottom: 0;">
-              <label for="phone-code">Country code (optional)</label>
+              <label for="phone-code" data-i18n="form.phoneCode.label">Country code (optional)</label>
               <select id="phone-code" name="phone-code">
-                <option value="">Select code</option>
+                <option value="" data-i18n="form.phoneCode.placeholder">Select code</option>
                 <option value="+91">India (+91)</option>
                 <option value="" disabled>──────────</option>
                 <option value="+61">Australia (+61)</option>
@@ -2686,19 +2839,19 @@ footer {
               </select>
             </div>
             <div class="field" style="margin-bottom: 0;">
-              <label for="phone-number">Mobile (optional)</label>
+              <label for="phone-number" data-i18n="form.phone.label">Mobile (optional)</label>
               <input type="tel" id="phone-number" name="phone-number" placeholder="9876543210">
             </div>
           </div>
 
           <div class="field" style="margin-bottom: 0;">
-            <label for="notes">Explain what you need (optional)</label>
-            <textarea id="notes" name="notes" rows="4" placeholder="What's your situation? Why are you reaching out? Any specific concerns, timelines or use cases we should know about? Especially helpful if you selected 'Bespoke / One-time engagement' above."></textarea>
+            <label for="notes" data-i18n="form.notes.label">Explain what you need (optional)</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="What's your situation? Why are you reaching out? Any specific concerns, timelines or use cases we should know about? Especially helpful if you selected 'Bespoke / One-time engagement' above." data-i18n-placeholder="form.notes.placeholder"></textarea>
           </div>
 
           <div class="deposit-area">
             <div class="deposit-header">
-              <span class="deposit-label">Willing to pay annually</span>
+              <span class="deposit-label" data-i18n="form.willing.label">Willing to pay annually</span>
               <div class="deposit-amount">
                 <span class="deposit-currency">₹</span><span id="deposit-display">2,000</span>
               </div>
@@ -2718,16 +2871,16 @@ footer {
               <span>MAX ₹1,00,000</span>
             </div>
 
-            <div class="deposit-note">
+            <div class="deposit-note" data-i18n="form.willing.note">
               <strong>This is a non-binding indication.</strong> We use it to prioritize who we invite first when Anty AI launches and to finalize pricing for each tier. There is no payment, no card collection and no escrow at this stage — just a signal to help us serve you better at launch.
             </div>
           </div>
 
-          <button type="submit" class="submit-btn">
+          <button type="submit" class="submit-btn" data-i18n="form.submit">
             Join the waitlist →
           </button>
 
-          <p class="tos-line">
+          <p class="tos-line" data-i18n="form.tos">
             By joining the waitlist, you confirm you have read and agree to the <a href="terms.html">Reservation Terms</a>, <a href="privacy.html">Privacy Policy</a> and <a href="dpdp-notice.html">DPDP / GDPR Notice</a>. Anty AI does not sell or share biometric data, ever.
           </p>
         </form>
@@ -2832,12 +2985,12 @@ footer {
         <div class="footer-mark">
           <span>Anty</span><span class="ai">.ai</span>
         </div>
-        <p class="footer-tag">The shield for your <em>likeness</em> — operating worldwide, with depth where it matters.</p>
+        <p class="footer-tag" data-i18n="footer.tag">The shield for your <em>likeness</em> — operating worldwide, with depth where it matters.</p>
         <a href="#waitlist" class="btn btn-ghost" style="border-color: var(--gold-light); color: var(--gold-light); background: transparent;">Reserve early access →</a>
       </div>
 
       <div class="footer-col">
-        <h5>Product</h5>
+        <h5 data-i18n="footer.col.product">Product</h5>
         <ul>
           <li><a href="#how">How it works</a></li>
           <li><a href="#protect">What we protect</a></li>
@@ -2847,7 +3000,7 @@ footer {
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Legal</h5>
+        <h5 data-i18n="footer.col.legal">Legal</h5>
         <ul>
           <li><a href="terms.html">Reservation Terms</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
@@ -2856,7 +3009,7 @@ footer {
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Contact</h5>
+        <h5 data-i18n="footer.col.contact">Contact</h5>
         <ul>
           <li><a href="mailto:hello@antyai.com">hello@antyai.com</a></li>
           <li><a href="mailto:legal@antyai.com">legal@antyai.com</a></li>
@@ -2867,8 +3020,8 @@ footer {
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 ANTY AI · ANTYAI.COM · ALL RIGHTS RESERVED</span>
-      <span>BIOMETRIC IDENTITY PROTECTION · IN PRIVATE BETA</span>
+      <span data-i18n="footer.copyright">© 2026 ANTY AI · ANTYAI.COM · ALL RIGHTS RESERVED</span>
+      <span data-i18n="footer.subscript">BIOMETRIC IDENTITY PROTECTION · IN PRIVATE BETA</span>
     </div>
   </div>
 </footer>
@@ -2876,10 +3029,10 @@ footer {
 <!-- ═══════════════════════════════════════════════════════════ MODAL ═══ -->
 <div class="modal-backdrop" id="modal">
   <div class="modal">
-    <h3>You're <em>on the list.</em></h3>
-    <p>You're on the waitlist. We'll email you when Anty AI is ready to onboard you in 2026. Our team will reach out personally if your category requires extra onboarding diligence.</p>
+    <h3 data-i18n="modal.title">You're <em>on the list.</em></h3>
+    <p data-i18n="modal.body">You're on the waitlist. We'll email you when Anty AI is ready to onboard you in 2026. Our team will reach out personally if your category requires extra onboarding diligence.</p>
     <span class="ref" id="ref-id">REF · ANTY-XXXX-XXXX</span>
-    <button class="btn btn-primary" onclick="document.getElementById('modal').classList.remove('show')">Close</button>
+    <button class="btn btn-primary" data-i18n="modal.close" onclick="document.getElementById('modal').classList.remove('show')">Close</button>
   </div>
 </div>
 
@@ -3043,6 +3196,106 @@ if (navToggle && navMobile) {
     });
   });
 }
+
+/* ───────── Language switcher (UI signal — only English functional for now) ───────── */
+const langTrigger = document.getElementById('lang-trigger');
+const langMenu = document.getElementById('lang-menu');
+if (langTrigger && langMenu) {
+  langTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langMenu.classList.toggle('open');
+    langTrigger.classList.toggle('open');
+    langTrigger.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', (e) => {
+    if (!langMenu.contains(e.target) && !langTrigger.contains(e.target)) {
+      langMenu.classList.remove('open');
+      langTrigger.classList.remove('open');
+      langTrigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      langMenu.classList.remove('open');
+      langTrigger.classList.remove('open');
+    }
+  });
+}
+// i18n engine: loads /translations/<lang>.json on demand, swaps text and
+// placeholders for elements with data-i18n / data-i18n-placeholder attributes.
+// Originals are stashed in data-i18n-original / data-i18n-original-ph so
+// switching back to English restores them without a page reload.
+const I18N_CACHE = {};
+
+async function applyLanguage(lang) {
+  if (lang === 'en') {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (el.dataset.i18nOriginal !== undefined) el.innerHTML = el.dataset.i18nOriginal;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      if (el.dataset.i18nOriginalPh !== undefined) el.placeholder = el.dataset.i18nOriginalPh;
+    });
+    document.documentElement.setAttribute('lang', 'en');
+    return;
+  }
+  if (!I18N_CACHE[lang]) {
+    try {
+      const res = await fetch(`/translations/${lang}.json`);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      I18N_CACHE[lang] = await res.json();
+    } catch (err) {
+      console.error('i18n load failed for', lang, err);
+      return;
+    }
+  }
+  const dict = I18N_CACHE[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (dict[key] !== undefined) {
+      if (el.dataset.i18nOriginal === undefined) el.dataset.i18nOriginal = el.innerHTML;
+      el.innerHTML = dict[key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (dict[key] !== undefined) {
+      if (el.dataset.i18nOriginalPh === undefined) el.dataset.i18nOriginalPh = el.placeholder;
+      el.placeholder = dict[key];
+    }
+  });
+  document.documentElement.setAttribute('lang', lang);
+}
+
+function setActiveLanguage(lang) {
+  document.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`.lang-option[data-lang="${lang}"]`).forEach(b => {
+    if (!b.classList.contains('disabled')) b.classList.add('active');
+  });
+  const currentEl = document.getElementById('lang-current');
+  if (currentEl) currentEl.textContent = lang.toUpperCase();
+}
+
+// Restore the user's saved language preference (or browser preference) on load.
+(function initLanguage() {
+  const saved = localStorage.getItem('antyai-lang');
+  if (saved && saved !== 'en') {
+    applyLanguage(saved).then(() => setActiveLanguage(saved));
+  }
+})();
+
+document.querySelectorAll('.lang-option').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    if (btn.classList.contains('disabled')) return;
+    const lang = btn.dataset.lang;
+    localStorage.setItem('antyai-lang', lang);
+    await applyLanguage(lang);
+    setActiveLanguage(lang);
+    langMenu?.classList.remove('open');
+    langTrigger?.classList.remove('open');
+    navMobile?.classList.remove('open');
+    navToggle?.classList.remove('open');
+  });
+});
 
 /* ───────── FAQ accordion ───────── */
 document.querySelectorAll('.faq-q').forEach(q => {
